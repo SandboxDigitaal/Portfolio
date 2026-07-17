@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harish Damodaran | Principal AI Product Leader</title>
-    <meta name="description" content="Outcome-driven portfolio of Harish Damodaran, Principal AI Product Leader & Solutions Architect specializing in multi-agent LLM systems, RAG, and high-performance telemetry.">
+    <meta name="description" content="Portfolio of Harish Damodaran, Principal AI Product Leader. Specializing in Conversational Platforms, Agentic Workflows, and Multi-Agent LLM Evaluation Infrastructure.">
     
-    <!-- Google Fonts: Lora (Serif) & Plus Jakarta Sans (Sans-serif) -->
+    <!-- Google Fonts: Lora (Editorial Serif) & Plus Jakarta Sans (Sleek Sans-Serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Phosphor Icons for minimalist visual aids -->
+    <!-- Phosphor Icons for elegant minimalist UI icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <!-- Tailwind CSS with custom editorial configuration -->
@@ -27,28 +27,22 @@
                     colors: {
                         cream: {
                             50: '#FDFCF9',
-                            100: '#FAF8F5',  /* Elegant Dev Elston Warm Background */
-                            200: '#F5EFE6',  /* Secondary Warm Tone */
-                            300: '#E8DEC9',  /* Soft Border Elements */
+                            100: '#FAF8F5',  /* Primary Devin Elston Background */
+                            200: '#F4EFEA',  /* Accent Warm Cream */
+                            300: '#E6DFD5',  /* Border/Divider Neutral */
+                            400: '#C7BEB1',
                         },
                         charcoal: {
-                            400: '#64605C',
-                            500: '#4C4845',
-                            800: '#2C2B29',  /* High Contrast Off-Black headers */
-                            900: '#1C1B1A',
+                            500: '#7C7872',  /* Muted Text */
+                            800: '#423F3B',  /* Standard Headers */
+                            900: '#2C2B29',  /* Deep Rich Text */
                         },
-                        rust: {
+                        terracotta: {
                             100: '#FDF2EE',
                             200: '#FBE4DB',
                             400: '#E27D60',
-                            500: '#C2593F',  /* Primary Orange/Terracotta Accent */
-                            600: '#A13C24',
-                        },
-                        electricBlue: {
-                            50: '#EFF6FF',
-                            100: '#DBEAFE',
-                            500: '#3B82F6',  /* Technical highlight blue */
-                            600: '#2563EB',
+                            500: '#C2593F',  /* Primary Accent Rust Color */
+                            600: '#A3462F',
                         }
                     }
                 }
@@ -58,391 +52,377 @@
 
     <style>
         body {
-            background-color: #FAF8F5;
-            color: #2C2B29;
-            overflow-x: hidden;
+            background-color: #FAF8F5; /* Matches cream-100 */
+            color: #2C2B29; /* Matches charcoal-900 */
         }
-
-        /* Ambient subtle grid overlay */
-        .geometric-grid {
-            background-image: 
-                radial-gradient(rgba(194, 89, 63, 0.04) 1px, transparent 1px), 
-                linear-gradient(to right, rgba(44, 43, 41, 0.02) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(44, 43, 41, 0.02) 1px, transparent 1px);
-            background-size: 32px 32px;
-            background-position: center center;
-        }
-
-        /* Persistent liquid splash canvas layer (Modified z-index to stay behind text) */
-        #splash-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: -1; 
-        }
-
-        /* Custom scroll bars */
+        
+        /* Subtle scrollbars matching the paper aesthetic */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 5px;
+            height: 5px;
         }
         ::-webkit-scrollbar-track {
             background: #FAF8F5;
         }
         ::-webkit-scrollbar-thumb {
-            background: #E8DEC9;
-            border-radius: 4px;
+            background: #E6DFD5;
+            border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #C2593F;
+            background: #C7BEB1;
         }
 
-        /* Interactive Card Hover Transforms */
-        .pow-card {
-            background-color: #FDFCF9;
-            border: 1px solid #E8DEC9;
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        /* Editorial card transitions without fixed heights to avoid overlap */
+        .interactive-card {
+            border: 1px solid #E6DFD5;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .pow-card:hover {
+        .interactive-card:hover {
             border-color: #C2593F;
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px -10px rgba(194, 89, 63, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 16px 32px -12px rgba(194, 89, 63, 0.08);
         }
 
-        /* Smooth collapse transitions */
+        /* Collapsible accordion transitions with high limits for safety */
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
+            transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
             opacity: 0;
         }
         .accordion-content.expanded {
-            max-height: 1500px;
+            max-height: 1500px; /* Highly dynamic and non-overlapping safe threshold */
             opacity: 1;
         }
 
-        /* Chat bubbles */
-        .chat-bubble-user {
-            background-color: #C2593F;
-            color: #FAF8F5;
-            border-radius: 12px 12px 2px 12px;
-        }
-        .chat-bubble-bot {
-            background-color: #F5EFE6;
-            color: #2C2B29;
-            border-radius: 12px 12px 12px 2px;
-            border: 1px solid #E8DEC9;
+        /* Focus borders */
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #C2593F !important;
+            box-shadow: 0 0 0 2px rgba(194, 89, 63, 0.15);
         }
 
-        /* Hide content during SPA view toggles */
-        .view-container {
-            transition: opacity 0.3s ease-in-out;
-            animation: fadeIn 0.4s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .hidden-view {
-            display: none !important;
+        /* Professional print layout optimization for offline sharing */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 10pt !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-full {
+                width: 100% !important;
+                display: block !important;
+            }
+            .accordion-content {
+                max-height: none !important;
+                opacity: 1 !important;
+                display: block !important;
+            }
         }
     </style>
 </head>
-<body class="selection:bg-rust-200 antialiased font-sans min-h-screen flex flex-col justify-between relative">
+<body class="selection:bg-terracotta-200 selection:text-terracotta-600 antialiased font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- Geometric grid and fluid canvas layer -->
-    <div class="fixed inset-0 geometric-grid pointer-events-none z-0"></div>
-    <canvas id="splash-canvas"></canvas>
-
-    <!-- Header Navigation Section -->
-    <header class="border-b border-cream-300 bg-cream-100/90 sticky top-0 z-50 backdrop-blur-md no-print">
+    <header class="border-b border-cream-300 bg-cream-50/90 sticky top-0 z-50 backdrop-blur-md no-print">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <button onclick="handleNav('home', 'top')" class="font-serif text-lg font-bold tracking-tight text-charcoal-800 flex items-center gap-2 text-left focus:outline-none">
-                    <span class="w-8 h-8 rounded-md bg-rust-500 text-cream-100 flex items-center justify-center font-bold text-base font-serif shadow-sm">HD</span>
+                <button onclick="handleNav('home', 'top')" class="font-serif text-lg font-bold tracking-tight text-charcoal-900 flex items-center gap-2 text-left focus:outline-none">
+                    <span class="w-8 h-8 rounded-md bg-terracotta-500 text-cream-100 flex items-center justify-center font-bold text-base font-serif shadow-sm">HD</span>
                     <span class="hidden sm:inline font-semibold">Harish Damodaran</span>
                 </button>
             </div>
             
             <nav class="hidden md:flex items-center gap-8 text-xs font-semibold text-charcoal-500 tracking-wider uppercase">
-                <button onclick="handleNav('home', 'chronology')" class="hover:text-rust-500 transition-colors focus:outline-none">Chronology</button>
-                <button onclick="handleNav('home', 'pow-metrics')" class="hover:text-rust-500 transition-colors focus:outline-none">Impact</button>
-                <button onclick="handleNav('projects')" class="hover:text-rust-500 transition-colors focus:outline-none">AI Showcase</button>
-                <button onclick="handleNav('publications')" class="hover:text-rust-500 transition-colors focus:outline-none">Articles & Pubs</button>
+                <button id="nav-link-showcase" onclick="handleNav('projects')" class="nav-item hover:text-terracotta-500 transition-colors focus:outline-none">Showcase</button>
+                <button id="nav-link-chronology" onclick="handleNav('home', 'experience')" class="nav-item hover:text-terracotta-500 transition-colors focus:outline-none">Chronology</button>
+                <button id="nav-link-roi" onclick="handleNav('home', 'metrics')" class="nav-item hover:text-terracotta-500 transition-colors focus:outline-none">ROI</button>
+                <button id="nav-link-articles" onclick="handleNav('publications')" class="nav-item hover:text-terracotta-500 transition-colors focus:outline-none">Articles & Pubs</button>
             </nav>
 
             <div class="flex items-center gap-3">
-                <button onclick="triggerPrintResume()" class="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold text-charcoal-800 bg-cream-200 hover:bg-cream-300 transition-all rounded-full border border-cream-300">
-                    <i class="ph ph-file-pdf text-base text-rust-500"></i> Print Resume
+                <button onclick="triggerPrintResume()" class="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold text-charcoal-900 bg-cream-200 hover:bg-cream-300 transition-all rounded-full border border-cream-300">
+                    <i class="ph ph-file-pdf text-base"></i> Print / PDF
                 </button>
-                <button onclick="openPitchModal()" class="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold text-cream-100 bg-rust-500 hover:bg-rust-600 transition-all rounded-full shadow-sm">
+                <button onclick="openPitchModal()" class="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold text-cream-100 bg-terracotta-500 hover:bg-terracotta-600 transition-all rounded-full shadow-sm">
                     <i class="ph ph-paper-plane-slant text-base"></i> Pitch Me
                 </button>
-                <button id="mobile-menu-toggle" class="md:hidden text-charcoal-800 p-1" aria-label="Toggle mobile menu">
+                <button id="mobile-menu-toggle" class="md:hidden text-charcoal-900 p-1" aria-label="Toggle mobile menu">
                     <i class="ph ph-list text-2xl"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu Drawer -->
-        <div id="mobile-nav" class="hidden border-t border-cream-300 bg-cream-100 px-6 py-4 flex flex-col gap-4 text-sm font-medium text-charcoal-500 shadow-lg absolute w-full left-0 z-40">
-            <button onclick="handleNav('home', 'chronology')" class="text-left py-1 hover:text-rust-500 transition-colors">Chronology</button>
-            <button onclick="handleNav('home', 'pow-metrics')" class="text-left py-1 hover:text-rust-500 transition-colors">Proof of Work (ROI)</button>
-            <button onclick="handleNav('projects')" class="text-left py-1 hover:text-rust-500 transition-colors">AI Showcase</button>
-            <button onclick="handleNav('publications')" class="text-left py-1 hover:text-rust-500 transition-colors">Articles & Pubs</button>
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-nav" class="hidden md:hidden border-t border-cream-300 bg-cream-50 px-6 py-4 flex flex-col gap-4 text-sm font-medium text-charcoal-500">
+            <button onclick="handleNav('projects')" class="text-left py-1 hover:text-terracotta-500 transition-colors">Showcase</button>
+            <button onclick="handleNav('home', 'experience')" class="text-left py-1 hover:text-terracotta-500 transition-colors">Chronology</button>
+            <button onclick="handleNav('home', 'metrics')" class="text-left py-1 hover:text-terracotta-500 transition-colors">ROI</button>
+            <button onclick="handleNav('publications')" class="text-left py-1 hover:text-terracotta-500 transition-colors">Articles & Pubs</button>
             <hr class="border-cream-300">
             <a href="https://www.linkedin.com/in/harishdamodaran" target="_blank" class="flex items-center gap-2 py-1"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
             <a href="https://github.com/SandboxDigitaal/" target="_blank" class="flex items-center gap-2 py-1"><i class="ph ph-github-logo"></i> GitHub Sandbox</a>
         </div>
     </header>
 
-    <!-- HOME VIEW SECTION -->
-    <div id="view-home" class="view-container relative z-10" style="min-height: 100vh;">
-        <div id="top"></div>
+    <div id="view-home" class="view-container">
         
-        <!-- Large Whitespace Landing Hero with Subtle Warm-to-Cool Mesh Gradients -->
-        <section class="max-w-6xl mx-auto px-6 pt-36 pb-28 lg:pt-48 lg:pb-36 flex flex-col justify-center border-b border-cream-300/60 relative">
-            <div class="absolute inset-0 bg-gradient-to-tr from-rust-100/10 via-transparent to-electricBlue-50/20 pointer-events-none -z-10"></div>
+        <!-- Large White space Landing Hero -->
+        <section class="max-w-6xl mx-auto px-6 pt-32 pb-24 lg:pt-44 lg:pb-32 flex flex-col justify-center border-b border-cream-300/60">
             <div class="max-w-4xl space-y-10">
                 <div class="flex items-center gap-3">
-                    <span class="w-2.5 h-2.5 rounded-full bg-rust-500 animate-pulse"></span>
-                    <span class="text-xs font-bold tracking-widest text-rust-500 uppercase">AI Product Leadership • MicroSaaS Architect</span>
+                    <span class="w-2 h-2 rounded-full bg-terracotta-500 animate-pulse"></span>
+                    <span class="text-xs font-bold tracking-widest text-terracotta-500 uppercase">Principal AI Product Leader & Architect</span>
                 </div>
                 
-                <h1 class="font-serif text-5xl lg:text-7xl font-semibold text-charcoal-800 leading-tight lg:leading-[1.15] tracking-tight">
-                    Transforming complex reasoning into<span class="bg-gradient-to-r from-rust-500 to-rust-600 bg-clip-text text-transparent"> million-dollar products</span>.
+                <h1 class="font-serif text-5xl lg:text-7xl font-black text-charcoal-900 leading-tight lg:leading-[1.08] tracking-tight">
+                    Architecting Multi-Agent Systems & Conversational Platforms.
                 </h1>
                 
-                <p class="font-sans text-lg lg:text-xl text-charcoal-500 max-w-3xl leading-relaxed font-light">
-                    Hello, I'm <strong class="font-semibold text-charcoal-800">Harish Damodaran</strong>. Over a 16-year cross-border career, I've built multi-agent evaluation tools, high-performance physical telemetries, and automated clinical environments that deliver verified business growth.
+                <p class="font-sans text-lg lg:text-xl text-charcoal-500 max-w-2xl leading-relaxed font-light">
+                    Hello, I'm <strong class="font-semibold text-charcoal-900">Harish Damodaran</strong>. I lead enterprise agentic workflows, conversational AI frameworks, and LLM evaluations to translate cutting-edge technology into millions in business revenue.
                 </p>
                 
                 <div class="flex flex-wrap items-center gap-4 pt-4">
-                    <button onclick="handleNav('projects')" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-cream-100 bg-rust-500 hover:bg-rust-600 transition-all rounded-lg shadow-md hover:shadow-lg">
-                        Explore My 6 AI Projects <i class="ph ph-arrow-right"></i>
+                    <button onclick="handleNav('projects')" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-cream-100 bg-terracotta-500 hover:bg-terracotta-600 transition-all rounded-lg shadow-sm">
+                        Explore Dedicated Project Showcase <i class="ph ph-arrow-right"></i>
                     </button>
-                    <button onclick="handleNav('home', 'pow-metrics')" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-charcoal-800 bg-cream-50 hover:bg-cream-200 border border-cream-300 transition-all rounded-lg">
-                        <i class="ph ph-chart-line-up"></i> Review Proof of Work
+                    <button onclick="triggerPrintResume()" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-charcoal-900 bg-cream-200 hover:bg-cream-300 transition-all rounded-lg border border-cream-300">
+                        <i class="ph ph-download-simple"></i> Save/Download Resume PDF
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- Chronology timeline with sticky details and gradients -->
-        <section id="chronology" class="max-w-6xl mx-auto px-6 py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative border-b border-cream-300/60">
+        <!-- Dynamic Experience Section with Sticky Left Current Info -->
+        <section id="experience" class="max-w-6xl mx-auto px-6 py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative border-b border-cream-300/60">
             
-            <!-- Sticky biographical Sidebar container -->
+            <!-- Sticky Sidebar only active relative to the Work Experience container -->
             <aside class="lg:col-span-4 lg:sticky lg:top-24 space-y-8 no-print">
                 <div class="space-y-4">
-                    <span class="text-[10px] font-extrabold tracking-widest text-rust-500 uppercase">Core Identity</span>
-                    <h3 class="font-serif text-3xl font-bold text-charcoal-800 leading-tight">Harish Damodaran</h3>
+                    <span class="text-[10px] font-extrabold tracking-widest text-terracotta-500 uppercase">Core Position & Focus</span>
+                    <h3 class="font-serif text-3xl font-black text-charcoal-900 leading-tight">Harish Damodaran</h3>
                     <p class="text-xs text-charcoal-500 font-light leading-relaxed">
-                        Strategist operating across biomedical engineering, digital health, conversational pipelines, and standalone SaaS applications. Dual focus on high accuracy bounds and scalable automation.
+                        Over 14 years of professional execution delivering advanced virtual realities, low-latency biomedical telemetries, and conversational AI frameworks.
                     </p>
                 </div>
 
-                <!-- Strategic Statistics Block with Terracotta/Orange Gradients -->
-                <div class="bg-gradient-to-br from-cream-50 to-rust-100/40 rounded-xl p-6 border border-cream-300 space-y-5 shadow-sm">
+                <!-- Current Position Stat Card -->
+                <div class="bg-cream-200/50 rounded-xl p-6 border border-cream-300 space-y-5">
                     <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold text-rust-500 tracking-wider uppercase block">Active Track Record</span>
-                        <h4 class="font-serif text-base font-bold text-charcoal-800 leading-tight">Verizon India</h4>
-                        <p class="text-[11px] text-charcoal-500 font-medium">Conversational Platforms • Manager</p>
+                        <span class="text-[10px] font-extrabold text-terracotta-500 tracking-wider uppercase block">Current Execution</span>
+                        <h4 class="font-serif text-base font-bold text-charcoal-900 leading-tight">Manager Experience Management</h4>
+                        <p class="text-[11px] text-charcoal-500 font-medium">Verizon India • Conversational AI Team</p>
                     </div>
-                    <div class="grid grid-cols-2 gap-4 border-t border-cream-300 pt-4">
+                    <div class="grid grid-cols-2 gap-4 border-t border-cream-300/80 pt-4">
                         <div>
-                            <span class="block font-serif text-2xl font-bold text-charcoal-800">15+</span>
-                            <span class="text-[9px] uppercase tracking-wider font-semibold text-charcoal-500">Years Exp</span>
+                            <span class="block font-serif text-2xl font-black text-charcoal-900">14+</span>
+                            <span class="text-[9px] uppercase tracking-wider font-semibold text-charcoal-500">Years Experience</span>
                         </div>
                         <div>
-                            <span class="block font-serif text-2xl font-bold text-rust-500">$5M+</span>
-                            <span class="text-[9px] uppercase tracking-wider font-semibold text-charcoal-500">Sales Created</span>
-                        </div>
-                         <div>
-                            <span class="block font-serif text-2xl font-bold text-charcoal-800">5</span>
-                            <span class="text-[9px] uppercase tracking-wider font-semibold text-charcoal-500">Apps launched</span>
-                        </div>
-                         <div>
-                            <span class="block font-serif text-2xl font-bold text-charcoal-800"> 6 </span>
-                            <span class="text-[9px] uppercase tracking-wider font-semibold text-charcoal-500">Awards</span>
+                            <span class="block font-serif text-2xl font-black text-charcoal-900">$1M+</span>
+                            <span class="text-[9px] uppercase tracking-wider font-semibold text-charcoal-500">Revenue Yielded</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Strategic Skills Dashboard with highlight blues -->
-                <div class="bg-gradient-to-br from-cream-50 to-electricBlue-50/60 rounded-xl p-6 border border-cream-300 space-y-4 shadow-sm">
-                    <span class="text-[10px] font-extrabold text-electricBlue-500 tracking-wider uppercase block">AI & Architecture Toolkit</span>
-                    
+                <div class="border-t border-cream-300 pt-6 space-y-3 text-xs font-light">
+                    <div class="flex items-start gap-3">
+                        <i class="ph ph-brain text-xl text-terracotta-500 shrink-0"></i>
+                        <div>
+                            <h4 class="font-bold text-charcoal-900 uppercase tracking-wider text-[10px]">AI-Agent Systems</h4>
+                            <p class="text-charcoal-500 mt-0.5">Focusing on evaluation systems for complex reasoning paths and agent task accuracy.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="ph ph-chart-donut text-xl text-terracotta-500 shrink-0"></i>
+                        <div>
+                            <h4 class="font-bold text-charcoal-900 uppercase tracking-wider text-[10px]">90% Success Metrics</h4>
+                            <p class="text-charcoal-500 mt-0.5">Continuous consumer validation ratings across automated channels.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publications & Patents Highlights -->
+                <div class="space-y-4 pt-4 border-t border-cream-300">
+                    <h4 class="text-xs font-bold text-charcoal-900 uppercase tracking-wider">Publications & Patents</h4>
                     <div class="space-y-3">
-                        <div>
-                            <div class="flex justify-between text-[10px] font-bold text-charcoal-800 mb-1">
-                                <span>RAG Systems & Context Framing</span>
-                                <span class="text-rust-500">92%</span>
-                            </div>
-                            <div class="w-full bg-cream-200 h-1.5 rounded-full overflow-hidden">
-                                <div class="bg-gradient-to-r from-rust-400 to-rust-500 h-full w-[92%]"></div>
-                            </div>
+                        <div class="p-3.5 rounded bg-cream-50 border border-cream-300 text-[11px] leading-relaxed">
+                            <strong class="text-charcoal-900 block font-serif text-xs">VSTEP Evaluation Study (JMIR 2023)</strong>
+                            <span class="text-charcoal-500 font-light block mt-0.5">Mixed methods usability evaluation of digital educational environments for stroke rehabilitation.</span>
                         </div>
-                        <div>
-                            <div class="flex justify-between text-[10px] font-bold text-charcoal-800 mb-1">
-                                <span>Dialogflow CX/ES Architectures</span>
-                                <span class="text-electricBlue-500">95%</span>
-                            </div>
-                            <div class="w-full bg-cream-200 h-1.5 rounded-full overflow-hidden">
-                                <div class="bg-gradient-to-r from-electricBlue-500 to-electricBlue-600 h-full w-[95%]"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-[10px] font-bold text-charcoal-800 mb-1">
-                                <span>Conversational UX (CES Frameworks)</span>
-                                <span class="text-rust-500">90%</span>
-                            </div>
-                            <div class="w-full bg-cream-200 h-1.5 rounded-full overflow-hidden">
-                                <div class="bg-gradient-to-r from-rust-400 to-rust-500 h-full w-[90%]"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-[10px] font-bold text-charcoal-800 mb-1">
-                                <span>Multi-Agent LLM Evaluation</span>
-                                <span class="text-electricBlue-500">88%</span>
-                            </div>
-                            <div class="w-full bg-cream-200 h-1.5 rounded-full overflow-hidden">
-                                <div class="bg-gradient-to-r from-electricBlue-500 to-electricBlue-600 h-full w-[88%]"></div>
-                            </div>
+                        <div class="p-3.5 rounded bg-cream-50 border border-cream-300 text-[11px] leading-relaxed">
+                            <strong class="text-charcoal-900 block font-serif text-xs">Reduction of Vehicle NOx Emissions</strong>
+                            <span class="text-charcoal-500 font-light block mt-0.5">Awarded Honeywell Freedom to Innovate Grand Prize; Provisional Patent.</span>
                         </div>
                     </div>
                 </div>
             </aside>
 
-            <!-- Detailed chronology timelines -->
             <main class="lg:col-span-8 space-y-8 print-full">
                 <div class="space-y-4">
-                    <span class="text-[10px] font-extrabold tracking-widest text-rust-500 uppercase font-sans">Professional History</span>
-                    <h2 class="font-serif text-3xl lg:text-4xl font-bold tracking-tight text-charcoal-800">Chronology of Impact</h2>
+                    <span class="text-[10px] font-extrabold tracking-widest text-terracotta-500 uppercase">Chronicle of Impact</span>
+                    <h2 class="font-serif text-3xl lg:text-4xl font-bold tracking-tight text-charcoal-900">Career History</h2>
                     <p class="text-charcoal-500 text-sm font-light">
-                        A detailed catalog of corporate roles spanning India and the United States. Click each container to inspect context, structural challenges, and metrics.
+                        An overview of major roles across conversational systems, clinical virtual realities, and aerospace research telemetry. Click each block to inspect milestones and strategies.
                     </p>
                 </div>
 
-                <!-- Timelines List -->
                 <div class="space-y-4">
                     
-                    <!-- Role 1: Verizon Manager -->
-                    <div class="pow-card rounded-xl p-6">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 cursor-pointer" onclick="toggleAccordion('exp-verizon')">
+                    <!-- Position 1: Verizon Manager -->
+                    <div class="rounded-xl border border-cream-300 bg-cream-50 p-6 hover:border-terracotta-500 transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 cursor-pointer" onclick="toggleAccordion('exp-verizon-mgr')">
                             <div class="space-y-1">
-                                <h3 class="font-serif text-lg font-bold text-charcoal-800">Manager Experience Management</h3>
-                                <p class="text-xs text-rust-500 font-semibold tracking-wider uppercase">Verizon • Conversational AI Team • India & USA Markets</p>
-                                <p class="text-xs text-charcoal-500 italic mt-1 flex items-center gap-1.5">
-                                    <i class="ph ph-caret-right text-rust-500"></i> Launched 5G Sales Chatbot within Verizon, generating over $5M+ in greenfield transactional revenue.
+                                <h3 class="font-serif text-lg font-bold text-charcoal-900">Manager Experience Management</h3>
+                                <p class="text-xs text-terracotta-500 font-semibold tracking-wider uppercase">Verizon • Conversational AI Team</p>
+                                <p class="text-xs text-terracotta-600 font-medium italic mt-1 flex items-center gap-1">
+                                    <i class="ph ph-arrow-right"></i> Launched greenfield 5G Conversational Al chatbot generating over $1M+ in revenue.
                                 </p>
                             </div>
                             <div class="flex items-center gap-2 self-start md:self-center shrink-0">
-                                <span class="text-xs font-mono text-charcoal-400">2021 – Present</span>
-                                <i id="exp-verizon-icon" class="ph ph-plus text-sm text-charcoal-400 transition-transform"></i>
+                                <span class="text-xs font-semibold text-charcoal-500">2021 – Present</span>
+                                <i id="exp-verizon-mgr-icon" class="ph ph-plus text-sm text-charcoal-500 transition-transform"></i>
                             </div>
                         </div>
 
-                        <div id="exp-verizon" class="accordion-content">
-                            <div class="mt-6 pt-6 border-t border-cream-300 space-y-4 text-xs text-charcoal-500 leading-relaxed font-light">
+                        <div id="exp-verizon-mgr" class="accordion-content">
+                            <div class="mt-6 pt-6 border-t border-cream-300/60 space-y-4 text-xs text-charcoal-500 leading-relaxed font-light">
                                 <p>
-                                    Spearheaded the conversational product pipeline across multi-channel environments. Orchestrated coordination flows with system designers, data science developers, and business stakeholders.
+                                    Acting as the direct product owner and catalyst behind Verizon's greenfield 5G Conversational AI sales engine. Managed end-to-end user-centered designs, complex intent frameworks, and metrics monitoring pipelines.
                                 </p>
-                                <ul class="list-disc pl-5 space-y-2">
-                                    <li><strong>Conversational Conversion:</strong> Established dynamic sales funnels converting baseline visits to checkouts, capturing over $5M+ pipeline revenue.</li>
-                                    <li><strong>System Integrity:</strong> Maintained high stability, securing zero high-severity pipeline bugs or downtime over multiple months.</li>
-                                    <li><strong>Agile Leadership:</strong> Led standard sprint iterations, PI Planning sessions, and design sprints to refine our intent mapping catalog.</li>
+                                <h4 class="font-bold text-charcoal-900 uppercase text-[10px] tracking-wider">Key Milestones:</h4>
+                                <ul class="list-disc pl-5 space-y-1.5">
+                                    <li><strong>$1M+ Generated Income:</strong> Designed and deployed an omni-channel conversational platform, converting users smoothly with zero critical pipeline downtime.</li>
+                                    <li><strong>90% Customer Thumbs-Up Rating:</strong> Partnered with corporate product design groups and third-party developers to design and test seamless conversational user interfaces.</li>
+                                    <li><strong>Agile Collaboration:</strong> Guided development across backend engineers, system architects, and executive leaders using Agile and SAFe methodologies.</li>
+                                    <li><strong>Innovation Facilitation:</strong> Actively entered internal hackathons, progressing into advanced rounds and facilitating ideation workshops for our product management cohorts.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Role 2: VSTEP Head of Product -->
-                    <div class="pow-card rounded-xl p-6">
+                    <!-- Position 2: VSTEP Head of Product -->
+                    <div class="rounded-xl border border-cream-300 bg-cream-50 p-6 hover:border-terracotta-500 transition-all">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 cursor-pointer" onclick="toggleAccordion('exp-vstep')">
                             <div class="space-y-1">
-                                <h3 class="font-serif text-lg font-bold text-charcoal-800">Head of Product Development</h3>
-                                <p class="text-xs text-rust-500 font-semibold tracking-wider uppercase">VSTEP • Digital Health Platforms • USA Market</p>
-                                <p class="text-xs text-charcoal-500 italic mt-1 flex items-center gap-1.5">
-                                    <i class="ph ph-caret-right text-rust-500"></i> Led spatial game designs mapping physics signals to neuro-recovery coordinates.
+                                <h3 class="font-serif text-lg font-bold text-charcoal-900">Head of Product Development</h3>
+                                <p class="text-xs text-terracotta-500 font-semibold tracking-wider uppercase">VSTEP • Digital Health Systems</p>
+                                <p class="text-xs text-terracotta-600 font-medium italic mt-1 flex items-center gap-1">
+                                    <i class="ph ph-arrow-right"></i> Spearheaded digital product development of evidence-based VR stroke rehabilitation games.
                                 </p>
                             </div>
                             <div class="flex items-center gap-2 self-start md:self-center shrink-0">
-                                <span class="text-xs font-mono text-charcoal-400">2018 – 2021</span>
-                                <i id="exp-vstep-icon" class="ph ph-plus text-sm text-charcoal-400 transition-transform"></i>
+                                <span class="text-xs font-semibold text-charcoal-500">2018 – 2021</span>
+                                <i id="exp-vstep-icon" class="ph ph-plus text-sm text-charcoal-500 transition-transform"></i>
                             </div>
                         </div>
 
                         <div id="exp-vstep" class="accordion-content">
-                            <div class="mt-6 pt-6 border-t border-cream-300 space-y-4 text-xs text-charcoal-500 leading-relaxed font-light">
+                            <div class="mt-6 pt-6 border-t border-cream-300/60 space-y-4 text-xs text-charcoal-500 leading-relaxed font-light">
                                 <p>
-                                    Supervised product integration for VRehab, a physical therapy health tech firm designed by expert clinician-scientists.
+                                    Served as the entrepreneurial product lead for VRehab, a physical-therapy and neuroscience venture focused on integrating immersive spatial tech into active medical diagnostics and post-injury rehabilitation programs.
                                 </p>
-                                <ul class="list-disc pl-5 space-y-2">
-                                    <li><strong>Therapeutic Design:</strong> Engineered user experiences mapping physical motions post-stroke to gaming coordinates.</li>
-                                    <li><strong>Stakeholder Matrix:</strong> Aligned medical parameters, software limitations, and physical therapy recovery schedules to target motor recovery success.</li>
+                                <h4 class="font-bold text-charcoal-900 uppercase text-[10px] tracking-wider">Key Milestones:</h4>
+                                <ul class="list-disc pl-5 space-y-1.5">
+                                    <li><strong>Product Planning:</strong> Oversaw developmental roadmaps for interactive activities-based therapeutic software systems designed for Parkinson's and stroke patients.</li>
+                                    <li><strong>Clinical Integration:</strong> Managed project collaborations between clinician-scientists, bio-engineers, and database technicians to validate software outcomes.</li>
+                                    <li><strong>User-Centered UX:</strong> Set design and safety criteria to keep patient engagement high while meeting strict clinical evaluation protocols.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Role 3: Rutgers R&D Engineer -->
-                    <div class="pow-card rounded-xl p-6">
+                    <!-- Position 3: Rutgers R&D Engineer -->
+                    <div class="rounded-xl border border-cream-300 bg-cream-50 p-6 hover:border-terracotta-500 transition-all">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 cursor-pointer" onclick="toggleAccordion('exp-rutgers')">
                             <div class="space-y-1">
-                                <h3 class="font-serif text-lg font-bold text-charcoal-800">Research & Development Engineer</h3>
-                                <p class="text-xs text-rust-500 font-semibold tracking-wider uppercase">Rutgers University • Virtual Environments LAB • USA Market</p>
-                                <p class="text-xs text-charcoal-500 italic mt-1 flex items-center gap-1.5">
-                                    <i class="ph ph-caret-right text-rust-500"></i> Engineered Unity 3D clinical motor coordination tracking software packages.
+                                <h3 class="font-serif text-lg font-bold text-charcoal-900">Research & Development Engineer</h3>
+                                <p class="text-xs text-terracotta-500 font-semibold tracking-wider uppercase">Rutgers University • Virtual Environments Lab</p>
+                                <p class="text-xs text-terracotta-600 font-medium italic mt-1 flex items-center gap-1">
+                                    <i class="ph ph-arrow-right"></i> Developed clinical VR simulations in Unity 3D integrating physiological sensor telemetry.
                                 </p>
                             </div>
                             <div class="flex items-center gap-2 self-start md:self-center shrink-0">
-                                <span class="text-xs font-mono text-charcoal-400">2013 – 2021</span>
-                                <i id="exp-rutgers-icon" class="ph ph-plus text-sm text-charcoal-400 transition-transform"></i>
+                                <span class="text-xs font-semibold text-charcoal-500">2013 – 2021</span>
+                                <i id="exp-rutgers-icon" class="ph ph-plus text-sm text-charcoal-500 transition-transform"></i>
                             </div>
                         </div>
 
                         <div id="exp-rutgers" class="accordion-content">
-                            <div class="mt-6 pt-6 border-t border-cream-300 space-y-4 text-xs text-charcoal-500 leading-relaxed font-light">
+                            <div class="mt-6 pt-6 border-t border-cream-300/60 space-y-4 text-xs text-charcoal-500 leading-relaxed font-light">
                                 <p>
-                                    Developed physics-based virtual training models and hardware link protocols within academic clinical test beds.
+                                    Engineered spatial virtual reality software tools focused on physical and neurological patient diagnostic metrics.
                                 </p>
-                                <ul class="list-disc pl-5 space-y-2">
-                                    <li><strong>Hardware Integration:</strong> Connected Kinect tracking sensors, metabolic pulse monitors, and gait sensors to log real-time data.</li>
-                                    <li><strong>Software Stack:</strong> Programmed logic scripts in Unity 3D/C# and processed numerical performance variables in MATLAB.</li>
+                                <h4 class="font-bold text-charcoal-900 uppercase text-[10px] tracking-wider">Key Milestones:</h4>
+                                <ul class="list-disc pl-5 space-y-1.5">
+                                    <li><strong>VR Engineering:</strong> Built physical joint calibration and visual-rehab virtual scenarios using Unity 3D, C#, and MATLAB modeling libraries.</li>
+                                    <li><strong>Sensor Integration:</strong> Built custom data links tracking bio-metric inputs (Microsoft Kinect, cadence & RPM tracking units, and wearable heart monitors).</li>
+                                    <li><strong>Platform Delivery:</strong> Standardized diagnostic data acquisition files for post-stroke mobility, helping therapists analyze balance and coordinate exercises.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Role 4: Veterans Administration Biomedical Engineer -->
-                    <div class="pow-card rounded-xl p-6">
+                    <!-- Position 4: VA Biomedical Engineer -->
+                    <div class="rounded-xl border border-cream-300 bg-cream-50 p-6 hover:border-terracotta-500 transition-all">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 cursor-pointer" onclick="toggleAccordion('exp-va')">
                             <div class="space-y-1">
-                                <h3 class="font-serif text-lg font-bold text-charcoal-800">Biomedical Engineer</h3>
-                                <p class="text-xs text-rust-500 font-semibold tracking-wider uppercase">Veterans Administration • High-Consequence Systems • USA Market</p>
-                                <p class="text-xs text-charcoal-500 italic mt-1 flex items-center gap-1.5">
-                                    <i class="ph ph-caret-right text-rust-500"></i> Built telemetry for NASA and optimized military systems to secure a 95% error drop.
+                                <h3 class="font-serif text-lg font-bold text-charcoal-900">Biomedical Engineer</h3>
+                                <p class="text-xs text-terracotta-500 font-semibold tracking-wider uppercase">Veterans Administration • East Orange NJ</p>
+                                <p class="text-xs text-terracotta-600 font-medium italic mt-1 flex items-center gap-1">
+                                    <i class="ph ph-arrow-right"></i> Led design of EEG systems for NASA and ambulatory sensors for US Army.
                                 </p>
                             </div>
                             <div class="flex items-center gap-2 self-start md:self-center shrink-0">
-                                <span class="text-xs font-mono text-charcoal-400">2009 – 2013</span>
-                                <i id="exp-va-icon" class="ph ph-plus text-sm text-charcoal-400 transition-transform"></i>
+                                <span class="text-xs font-semibold text-charcoal-500">2009 – 2013</span>
+                                <i id="exp-va-icon" class="ph ph-plus text-sm text-charcoal-500 transition-transform"></i>
                             </div>
                         </div>
 
                         <div id="exp-va" class="accordion-content">
-                            <div class="mt-6 pt-6 border-t border-cream-300 space-y-4 text-xs text-charcoal-500 leading-relaxed font-light">
+                            <div class="mt-6 pt-6 border-t border-cream-300/60 space-y-4 text-xs text-charcoal-500 leading-relaxed font-light">
                                 <p>
-                                    Constructed advanced physiological signal capturing environments, virtual spaces, and neural analysis architectures.
+                                    Managed high-consequence telemetry and analytical sensor frameworks across NASA, US Army, Picatinny Arsenal, and university research facilities.
                                 </p>
-                                <ul class="list-disc pl-5 space-y-2">
-                                    <li><strong>NASA Remoting System:</strong> Engineered a remote data-logging rig recording EEG, capnography, and blood pressure under 3G forces.</li>
-                                    <li><strong>US Army Ambulatory Link:</strong> Developed wireless physiological transmission nodes, boosting system bandwidth by 70%.</li>
-                                    <li><strong>Error Minimization:</strong> Reconfigured interface logic routines, eliminating 95% of data loss from human-factor errors.</li>
+                                <h4 class="font-bold text-charcoal-900 uppercase text-[10px] tracking-wider">Key Project Milestones:</h4>
+                                <ul class="list-disc pl-5 space-y-1.5">
+                                    <li><strong>NASA Telemetry:</strong> Directed development of a remote-controlled EEG/capnograph data-logging suite built to endure forces up to 3G.</li>
+                                    <li><strong>US Army Ambulatory Systems:</strong> Overhauled existing telemetry devices, increasing signal reach by 10% and overall bandwidth capacity by 70%.</li>
+                                    <li><strong>Error Reduction:</strong> Reconstructed data logging protocols in Labview, reducing user-driven telemetry drops by 95%.</li>
+                                    <li><strong>Picatinny Arsenal VR:</strong> Managed behavior-tracking projects, scaling system field of view from 60 to 360 degrees.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Position 5: NJIT Research Assistant -->
+                    <div class="rounded-xl border border-cream-300 bg-cream-50 p-6 hover:border-terracotta-500 transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 cursor-pointer" onclick="toggleAccordion('exp-njit')">
+                            <div class="space-y-1">
+                                <h3 class="font-serif text-lg font-bold text-charcoal-900">Research Assistant</h3>
+                                <p class="text-xs text-terracotta-500 font-semibold tracking-wider uppercase">NJIT • Robot Assisted VR Rehab Lab</p>
+                                <p class="text-xs text-terracotta-600 font-medium italic mt-1 flex items-center gap-1">
+                                    <i class="ph ph-arrow-right"></i> Engineered physics-based VR simulation modules utilizing CyberGlove haptic tracking.
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-2 self-start md:self-center shrink-0">
+                                <span class="text-xs font-semibold text-charcoal-500">2009 – 2011</span>
+                                <i id="exp-njit-icon" class="ph ph-plus text-sm text-charcoal-500 transition-transform"></i>
+                            </div>
+                        </div>
+
+                        <div id="exp-njit" class="accordion-content">
+                            <div class="mt-6 pt-6 border-t border-cream-300/60 space-y-4 text-xs text-charcoal-500 leading-relaxed font-light">
+                                <p>
+                                    Developed automated biomechanical feedback systems to support therapeutic joint rehab protocols.
+                                </p>
+                                <h4 class="font-bold text-charcoal-900 uppercase text-[10px] tracking-wider">Key Milestones:</h4>
+                                <ul class="list-disc pl-5 space-y-1.5">
+                                    <li><strong>Physics Engine Design:</strong> Engineered VR world interactions via Virtools and MATLAB to process upper-extremity movement data.</li>
+                                    <li><strong>Haptic Device Integration:</strong> Maintained device driver linkages with tracking systems like CyberGlove and Flock of Birds.</li>
                                 </ul>
                             </div>
                         </div>
@@ -452,495 +432,290 @@
             </main>
         </section>
 
-        <!-- Visual "Proof of Work" (Outcome-Driven Portfolio Modules) -->
-        <section id="pow-metrics" class="max-w-6xl mx-auto px-6 py-20 lg:py-28 border-b border-cream-300/60">
+        <section id="metrics" class="max-w-6xl mx-auto px-6 py-20 lg:py-28 border-b border-cream-300/60">
             <div class="space-y-4 mb-16">
                 <div class="flex items-center gap-3">
-                    <span class="text-[10px] font-extrabold tracking-widest text-rust-500 uppercase">Outcome-Based Proof of Work</span>
+                    <span class="text-[10px] font-extrabold tracking-widest text-terracotta-500 uppercase">Impact Metrics & System Analytics</span>
                     <div class="h-[1px] bg-cream-300 flex-grow"></div>
                 </div>
-                <h2 class="font-serif text-3xl lg:text-4xl font-bold tracking-tight text-charcoal-800">Metrics & Outcomes</h2>
-                <p class="text-charcoal-500 text-sm max-w-3xl font-light">
-                    As outlined in product management excellence guidelines, I focus on actual business outcomes. The charts below display the systems-level impact, processing pipelines, and raw outcomes delivered.
-                </p>
-            </div>
-
-            <!-- 2x2 Outcome Block Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
-                <!-- Proof of Work 1: Verizon Conversational Pipeline -->
-                <div class="bg-gradient-to-br from-cream-50 via-cream-100 to-rust-100/30 p-6 rounded-xl border border-cream-300 space-y-6">
-                    <div class="flex items-center justify-between">
-                        <h3 class="font-serif text-lg font-bold text-charcoal-800">Conversational Revenue Engine</h3>
-                        <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-rust-500 text-cream-100 uppercase tracking-wider">Verizon India</span>
-                    </div>
-                    
-                    <!-- SVG Flowchart -->
-                    <div class="py-4 bg-cream-50/80 rounded-lg border border-cream-300/40 p-3">
-                        <svg class="w-full" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Process step 1 -->
-                            <rect x="10" y="35" width="85" height="50" rx="6" fill="#FDFCF9" stroke="#E8DEC9" stroke-width="1.5"/>
-                            <text x="52" y="58" fill="#2C2B29" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">5G Traffic</text>
-                            <text x="52" y="73" fill="#64605C" font-family="sans-serif" font-size="8" text-anchor="middle">Cart Abandonment</text>
-                            
-                            <!-- Arrow 1 -->
-                            <path d="M 105 60 L 135 60" stroke="#C2593F" stroke-width="1.5" stroke-dasharray="3,3"/>
-                            <polygon points="135,57 141,60 135,63" fill="#C2593F"/>
-                            
-                            <!-- Process step 2 -->
-                            <rect x="150" y="25" width="100" height="70" rx="6" fill="#FBE4DB" stroke="#C2593F" stroke-width="1.5"/>
-                            <text x="200" y="48" fill="#2C2B29" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">Conversational Bot</text>
-                            <text x="200" y="63" fill="#C2593F" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle">Omni Intent API</text>
-                            <text x="200" y="78" fill="#64605C" font-family="sans-serif" font-size="8" text-anchor="middle">Catalog Checks</text>
-                            
-                            <!-- Arrow 2 -->
-                            <path d="M 260 60 L 290 60" stroke="#C2593F" stroke-width="1.5"/>
-                            <polygon points="290,57 296,60 290,63" fill="#C2593F"/>
-                            
-                            <!-- Process step 3 -->
-                            <rect x="305" y="35" width="85" height="50" rx="6" fill="#C2593F" />
-                            <text x="347" y="58" fill="#FAF8F5" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">$5M+ Added</text>
-                            <text x="347" y="73" fill="#FAF8F5" font-family="sans-serif" font-size="8" text-anchor="middle">90% User Approval</text>
-                        </svg>
-                    </div>
-                    
-                    <p class="text-xs text-charcoal-500 font-light leading-relaxed">
-                        <strong>The Challenge:</strong> High mobile cart abandonment levels. <strong>The Strategy:</strong> Coordinated intent classification catalogs and designed real-time checkout prompts. <strong>The Outcome:</strong> Over $5 Million converted in transaction pipeline.
-                    </p>
-                </div>
-
-                <!-- Proof of Work 2: NASA Biomedical Telemetry -->
-                <div class="bg-gradient-to-br from-cream-50 via-cream-100 to-electricBlue-100/30 p-6 rounded-xl border border-cream-300 space-y-6">
-                    <div class="flex items-center justify-between">
-                        <h3 class="font-serif text-lg font-bold text-charcoal-800">Biomedical Signal Protection</h3>
-                        <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-electricBlue-500 text-cream-100 uppercase tracking-wider">NASA & VA Systems</span>
-                    </div>
-                    
-                    <!-- SVG Flowchart -->
-                    <div class="py-4 bg-cream-50/80 rounded-lg border border-cream-300/40 p-3">
-                        <svg class="w-full" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Process step 1 -->
-                            <rect x="10" y="35" width="85" height="50" rx="6" fill="#FDFCF9" stroke="#E8DEC9" stroke-width="1.5"/>
-                            <text x="52" y="58" fill="#2C2B29" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">3G Load Forces</text>
-                            <text x="52" y="73" fill="#64605C" font-family="sans-serif" font-size="8" text-anchor="middle">EEG/Analog Noise</text>
-                            
-                            <!-- Arrow 1 -->
-                            <path d="M 105 60 L 135 60" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="3,3"/>
-                            <polygon points="135,57 141,60 135,63" fill="#3B82F6"/>
-                            
-                            <!-- Process step 2 -->
-                            <rect x="150" y="25" width="100" height="70" rx="6" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
-                            <text x="200" y="48" fill="#2C2B29" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">Labview Optimization</text>
-                            <text x="200" y="63" fill="#3B82F6" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle">Redundant Filters</text>
-                            <text x="200" y="78" fill="#64605C" font-family="sans-serif" font-size="8" text-anchor="middle">95% Error Drop</text>
-                            
-                            <!-- Arrow 2 -->
-                            <path d="M 260 60 L 290 60" stroke="#3B82F6" stroke-width="1.5"/>
-                            <polygon points="290,57 296,60 290,63" fill="#3B82F6"/>
-                            
-                            <!-- Process step 3 -->
-                            <rect x="305" y="35" width="85" height="50" rx="6" fill="#3B82F6" />
-                            <text x="347" y="58" fill="#FAF8F5" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">70% BW Gain</text>
-                            <text x="347" y="73" fill="#FAF8F5" font-family="sans-serif" font-size="8" text-anchor="middle">High Integrity Link</text>
-                        </svg>
-                    </div>
-                    
-                    <p class="text-xs text-charcoal-500 font-light leading-relaxed">
-                        <strong>The Challenge:</strong> High analog signal dropouts in telemetry under heavy forces. <strong>The Strategy:</strong> Restructured buffers and digital filters. <strong>The Outcome:</strong> Achieved a 95% error rate reduction and a 70% increase in operational bandwidth.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Dynamic Credentials & Educational Section -->
-        <section class="max-w-6xl mx-auto px-6 py-20 lg:py-28 border-b border-cream-300/60">
-            <div class="space-y-4 mb-16">
-                <div class="flex items-center gap-3">
-                    <span class="text-[10px] font-extrabold tracking-widest text-rust-500 uppercase">Educational History</span>
-                    <div class="h-[1px] bg-cream-300 flex-grow"></div>
-                </div>
-                <h2 class="font-serif text-3xl lg:text-4xl font-bold tracking-tight text-charcoal-800">Universities & Certifications</h2>
+                <h2 class="font-serif text-3xl lg:text-4xl font-bold tracking-tight text-charcoal-900">Measuring AI Conversational Impact (ROI)</h2>
                 <p class="text-charcoal-500 text-sm max-w-2xl font-light">
-                    My foundational technical education, coupled with elite Agile, product design, and conversational credentials.
+                    Click the interactive data nodes on the trendline below to inspect how target-driven decisions directly influenced model accuracy and revenue capture.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Academic Credentials -->
-                <div class="bg-gradient-to-br from-cream-50 to-cream-100 p-6 rounded-xl border border-cream-300 space-y-6">
-                    <h3 class="font-serif text-xl font-bold text-charcoal-800 flex items-center gap-2">
-                        <i class="ph ph-graduation-cap text-rust-500"></i> Higher Education
-                    </h3>
+            <div class="bg-cream-50 rounded-xl border border-cream-300 p-6 md:p-8 space-y-6">
+                <div class="w-full h-72 md:h-80 bg-cream-100/40 rounded-lg p-6 relative border border-cream-200 flex flex-col justify-between">
                     
-                    <div class="space-y-4">
-                        <div class="border-l-2 border-rust-400 pl-4 space-y-1">
-                            <span class="text-[9px] font-mono uppercase tracking-wider text-rust-500">Master of Science</span>
-                            <h4 class="font-serif font-bold text-charcoal-800 text-base">Biomedical Engineering</h4>
-                            <p class="text-xs text-charcoal-500 font-medium">New Jersey Institute of Technology (NJIT), USA</p>
-                            <p class="text-[11px] text-charcoal-400">Specialization in spatial VR mechanics, sensory kinematics, and Matlab signal logging.</p>
-                        </div>
-                        <div class="border-l-2 border-rust-400 pl-4 space-y-1 pt-2">
-                            <span class="text-[9px] font-mono uppercase tracking-wider text-rust-500">Bachelor of Technology</span>
-                            <h4 class="font-serif font-bold text-charcoal-800 text-base">Biotechnology</h4>
-                            <p class="text-xs text-charcoal-500 font-medium">Vellore Institute of Technology (VIT), India</p>
-                        </div>
+                    <!-- Y-Axis Labels -->
+                    <div class="absolute left-2 top-6 bottom-12 flex flex-col justify-between text-[9px] font-mono text-charcoal-500">
+                        <span>99% (Target Accuracy)</span>
+                        <span>75%</span>
+                        <span>50%</span>
+                        <span>25%</span>
+                        <span>0% (Baseline)</span>
+                    </div>
+
+                    <!-- Main Line Graph SVG -->
+                    <div class="flex-grow ml-12 mr-2 mt-2 mb-8 relative">
+                        <svg class="w-full h-full" viewBox="0 0 500 200" preserveAspectRatio="none">
+                            <line x1="0" y1="0" x2="500" y2="0" stroke="#E6DFD5" stroke-dasharray="3,3" stroke-width="1"/>
+                            <line x1="0" y1="50" x2="500" y2="50" stroke="#E6DFD5" stroke-dasharray="3,3" stroke-width="1"/>
+                            <line x1="0" y1="100" x2="500" y2="100" stroke="#E6DFD5" stroke-dasharray="3,3" stroke-width="1"/>
+                            <line x1="0" y1="150" x2="500" y2="150" stroke="#E6DFD5" stroke-dasharray="3,3" stroke-width="1"/>
+                            <line x1="0" y1="200" x2="500" y2="200" stroke="#E6DFD5" stroke-width="1"/>
+
+                            <!-- Phase Guides -->
+                            <line x1="20" y1="0" x2="20" y2="200" stroke="#E6DFD5" stroke-width="1"/>
+                            <line x1="160" y1="0" x2="160" y2="200" stroke="#E6DFD5" stroke-width="1"/>
+                            <line x1="300" y1="0" x2="300" y2="200" stroke="#E6DFD5" stroke-width="1"/>
+                            <line x1="440" y1="0" x2="440" y2="200" stroke="#E6DFD5" stroke-width="1"/>
+
+                            <!-- Trend Line 1: Basic Models (Dotted Gray) -->
+                            <path d="M 20,170 L 160,150 L 300,120 L 440,110" fill="none" stroke="#C7BEB1" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+                            <!-- Trend Line 2: Harish's Agentic Optimization (Solid Rust) -->
+                            <path d="M 20,150 L 160,90 L 300,45 L 440,15" fill="none" stroke="#C2593F" stroke-width="3"/>
+
+                            <!-- Clickable Highlight Nodes (Dots) -->
+                            <circle cx="20" cy="150" r="7" fill="#FAF8F5" stroke="#C2593F" stroke-width="3" class="cursor-pointer hover:scale-150 transition-transform" onclick="selectGraphNode(0)"/>
+                            <circle cx="160" cy="90" r="7" fill="#FAF8F5" stroke="#C2593F" stroke-width="3" class="cursor-pointer hover:scale-150 transition-transform" onclick="selectGraphNode(1)"/>
+                            <circle cx="300" cy="45" r="7" fill="#FAF8F5" stroke="#C2593F" stroke-width="3" class="cursor-pointer hover:scale-150 transition-transform" onclick="selectGraphNode(2)"/>
+                            <circle cx="440" cy="15" r="7" fill="#FAF8F5" stroke="#C2593F" stroke-width="3" class="cursor-pointer hover:scale-150 transition-transform" onclick="selectGraphNode(3)"/>
+                        </svg>
+                    </div>
+
+                    <!-- X-Axis Labels -->
+                    <div class="absolute bottom-1 left-12 right-2 flex justify-between text-[9px] font-mono text-charcoal-500">
+                        <span>Phase 1: Alignment</span>
+                        <span>Phase 2: Intent Training</span>
+                        <span>Phase 3: Omni Integration</span>
+                        <span>Phase 4: Multi-Agent Eval</span>
                     </div>
                 </div>
 
-                <!-- Professional Certifications -->
-                <div class="bg-gradient-to-br from-cream-50 to-cream-100 p-6 rounded-xl border border-cream-300 space-y-6">
-                    <h3 class="font-serif text-xl font-bold text-charcoal-800 flex items-center gap-2">
-                        <i class="ph ph-certificate text-rust-500"></i> Professional Designations
-                    </h3>
-                    
-                    <div class="space-y-4 text-xs">
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded bg-rust-500/10 text-rust-500 flex items-center justify-center shrink-0">
-                                <i class="ph ph-shield-check text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-charcoal-800">SAFe Product Owner / Product Manager (POPM)</h4>
-                                <p class="text-[11px] text-charcoal-500">Scale-Agile implementation methodologies, backlog refinement, and PI alignment.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3 border-t border-cream-300/60 pt-3">
-                            <div class="w-8 h-8 rounded bg-electricBlue-500/10 text-electricBlue-500 flex items-center justify-center shrink-0">
-                                <i class="ph ph-chat-centered-text text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-charcoal-800">Certified Conversational UX Designer</h4>
-                                <p class="text-[11px] text-charcoal-500">Conversational design frameworks, client path mapping, and Dialogflow catalog configuration.</p>
-                            </div>
-                        </div>
+                <!-- Selected Node Data Explainer Card -->
+                <div id="graph-explainer" class="rounded-lg bg-cream-100 border border-cream-300 p-4 flex gap-4 items-start">
+                    <div class="w-8 h-8 rounded bg-terracotta-500/10 text-terracotta-500 flex items-center justify-center shrink-0">
+                        <i class="ph ph-chart-line text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 id="explainer-title" class="font-serif text-sm font-bold text-charcoal-900">Click any interactive node on the trendline above</h4>
+                        <p id="explainer-desc" class="text-xs text-charcoal-500 mt-1 leading-relaxed">
+                            Discover the specific design iterations, latency budgets, and revenue milestones reached at each development phase.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Dynamic Quick Action Footer to Sub-sections -->
+        <section class="max-w-6xl mx-auto px-6 py-12 text-center bg-cream-50/50 rounded-2xl border border-cream-300/40 my-16">
+            <h3 class="font-serif text-xl font-bold text-charcoal-900 mb-2">Dive Deeper Into My Work</h3>
+            <p class="text-xs text-charcoal-500 max-w-lg mx-auto mb-6">See full detailed projects, physical therapeutics systems, and clinical validation papers.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="handleNav('projects')" class="px-5 py-2.5 bg-terracotta-500 hover:bg-terracotta-600 text-cream-100 text-xs font-semibold rounded-lg shadow-sm transition-all">
+                    Go to Full Showcase <i class="ph ph-arrow-right"></i>
+                </button>
+                <button onclick="handleNav('publications')" class="px-5 py-2.5 bg-cream-200 hover:bg-cream-300 text-charcoal-900 border border-cream-300 text-xs font-semibold rounded-lg transition-all">
+                    Go to Publications & Articles
+                </button>
+            </div>
+        </section>
+
     </div>
 
-    <!-- PROJECTS SHOWCASE VIEW (Dynamic dynamic layout) -->
-    <div id="view-projects" class="view-container hidden-view relative z-10 max-w-6xl mx-auto px-6 py-20 lg:py-28 space-y-12">
-        <div class="space-y-4">
+    <div id="view-projects" class="view-container hidden max-w-6xl mx-auto px-6 py-20 lg:py-28">
+        <div class="space-y-4 mb-16">
             <div class="flex items-center gap-3">
-                <span class="text-[10px] font-extrabold tracking-widest text-rust-500 uppercase">Product Showcase</span>
+                <span class="text-[10px] font-extrabold tracking-widest text-terracotta-500 uppercase">Product Showcase</span>
                 <div class="h-[1px] bg-cream-300 flex-grow"></div>
             </div>
-            <h2 class="font-serif text-3xl lg:text-5xl font-bold tracking-tight text-charcoal-800">Active AI & MicroSaaS Solutions</h2>
+            <h2 class="font-serif text-3xl lg:text-5xl font-black tracking-tight text-charcoal-900">Functional Implementations & System Layouts</h2>
             <p class="text-charcoal-500 text-sm max-w-2xl font-light">
-                An active showcase of functional tools, AI applications, and performance-driven frameworks engineered for scale.
+                Explore real, interactive representations of structural architectures I have delivered. These widgets simulate conversational agents, spatial environments, and clinical telemetries.
             </p>
         </div>
 
-        <!-- Dynamic GitHub Dashboard Brought Up-front -->
-        <div class="bg-gradient-to-r from-cream-50 via-cream-100 to-rust-100/30 rounded-xl border border-cream-300 p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm">
-            <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                    <i class="ph ph-github-logo text-3xl text-rust-500"></i>
-                    <h3 class="font-serif text-xl font-bold text-charcoal-800">GitHub Sandbox Workspace</h3>
-                </div>
-                <p class="text-xs text-charcoal-500 max-w-xl leading-relaxed">
-                    Examine underlying repositories, automated evaluation harnesses, and custom standalone workflows built to test LLM parameters.
-                </p>
-            </div>
-            <a href="https://github.com/SandboxDigitaal/" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 bg-charcoal-800 hover:bg-charcoal-900 text-cream-100 text-xs font-semibold rounded-lg shadow-md transition-all shrink-0">
-                <i class="ph ph-arrow-square-out text-base"></i> View Sandbox Repo
-            </a>
-        </div>
-
-        <!-- 6 AI Project Interactive Grid (Completely Reactive Height Layout) -->
+        <!-- Corrected dynamic height grid avoiding overlapping -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             
-            <!-- Project 1: VoicePractice AI -->
-            <div class="pow-card rounded-xl p-6 flex flex-col justify-between min-h-[520px] h-auto pb-8 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-rust-500/5 rounded-full blur-2xl pointer-events-none"></div>
+            <!-- Project 1: Conversational AI -->
+            <div class="interactive-card rounded-xl bg-cream-50 p-6 flex flex-col justify-between min-h-[520px] h-auto pb-8">
                 <div class="space-y-5">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-extrabold text-rust-500 tracking-wider uppercase">Project 01 • Conversational Voice</span>
-                        <span class="px-2 py-0.5 rounded text-[8px] font-bold bg-green-500/10 text-green-600">ACTIVE</span>
+                        <span class="text-[10px] font-extrabold text-terracotta-500 tracking-wider uppercase">Conversational AI</span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-bold text-green-700 bg-green-100 rounded-full">
+                            <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping"></span> Live Agent
+                        </span>
                     </div>
                     <div>
-                        <h3 class="font-serif text-2xl font-bold text-charcoal-800">VoicePractice AI Coach</h3>
+                        <h3 class="font-serif text-2xl font-bold text-charcoal-900">5G Conversational Sales Agent</h3>
                         <p class="text-xs text-charcoal-500 mt-2 font-light leading-relaxed">
-                            An automated interactive interview simulation coach providing immediate audio-latency metrics, pitch assessment, and semantic analysis to prepare applicants for executive loops.
+                            Spearheaded the design and deployment of Verizon's flagship 5G conversational AI platform. Handled millions of queries with zero downtime and generated over $1M+ in greenfield revenue.
                         </p>
                     </div>
 
-                    <!-- Visual Representation -->
-                    <div class="bg-cream-100 rounded-lg p-4 h-48 flex flex-col justify-between border border-cream-300 shadow-inner">
-                        <div class="flex items-center justify-between">
-                            <span class="text-rust-500 font-mono text-[9px] uppercase tracking-widest">Active Call Link</span>
-                            <span class="text-charcoal-400 font-mono text-[8px]">Lat: 140ms</span>
+                    <!-- Interactive Live Widget -->
+                    <div class="bg-charcoal-900 rounded-lg p-4 h-48 flex flex-col justify-between font-mono text-[11px] text-cream-100 border border-cream-300 shadow-inner">
+                        <div class="space-y-2.5 overflow-y-auto max-h-36 pr-1">
+                            <div class="text-terracotta-400 font-bold">&gt;_ system_initiate: Conversational agent active.</div>
+                            <div class="text-cream-300"><span class="text-blue-400 font-semibold">User:</span> What are the benefits of 5G Home Internet in New York?</div>
+                            <div class="bg-charcoal-800 p-2.5 rounded border border-charcoal-500/30 text-green-400 leading-normal">
+                                <span class="font-bold text-terracotta-400">Agentic Engine:</span> 5G network parameters fetched. Recommended configuration: Ultra Wideband Home plan. Outputting checkout link.
+                            </div>
                         </div>
-                        <div class="flex items-end justify-center gap-1.5 h-20">
-                            <div class="w-1.5 bg-rust-400 h-8 rounded-full animate-pulse"></div>
-                            <div class="w-1.5 bg-rust-500 h-16 rounded-full animate-pulse" style="animation-delay: 0.1s"></div>
-                            <div class="w-1.5 bg-electricBlue-500 h-24 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
-                            <div class="w-1.5 bg-rust-500 h-12 rounded-full animate-pulse" style="animation-delay: 0.3s"></div>
-                            <div class="w-1.5 bg-rust-400 h-6 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
-                        </div>
-                        <div class="flex justify-between text-[8px] text-charcoal-400 font-mono uppercase">
-                            <span>Mic Stream: Enabled</span>
-                            <span>Engine: Whisper & TTS</span>
+                        <div class="flex gap-2 items-center border-t border-charcoal-800 pt-2 shrink-0">
+                            <span class="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+                            <span class="text-[9px] text-charcoal-500 uppercase">Omni-Channel API Synced • 90% Customer Thumbs Up</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="pt-6 mt-6 border-t border-cream-300">
-                    <button onclick="toggleAccordion('pro-spec-1')" class="w-full flex items-center justify-between text-xs font-bold text-rust-500 hover:text-rust-600 uppercase tracking-wider focus:outline-none">
-                        <span>Project Architecture Specs</span>
-                        <i id="pro-spec-1-icon" class="ph ph-caret-down text-sm transition-transform"></i>
+                    <button onclick="toggleAccordion('project-1-details')" class="w-full flex items-center justify-between text-xs font-bold text-terracotta-500 hover:text-terracotta-600 transition-colors uppercase tracking-wider focus:outline-none">
+                        <span>Technical Infrastructure Specifications</span>
+                        <i id="project-1-details-icon" class="ph ph-caret-down text-sm transition-transform"></i>
                     </button>
-                    <div id="pro-spec-1" class="accordion-content text-xs text-charcoal-500 space-y-2 mt-4 bg-cream-50 p-4 rounded border border-cream-300">
-                        <p><strong>Core Stack:</strong> Whisper-API for low latency transcription, custom TTS speech synthesizing layer, and Node.js backend pipelines.</p>
-                        <p><strong>Outcome Goal:</strong> Allows users to hone pitch styles and experience immediate latency, pacing, and vocabulary diagnostics.</p>
+                    <div id="project-1-details" class="accordion-content text-xs text-charcoal-500 space-y-2 mt-4 bg-cream-100/60 p-4 rounded border border-cream-300">
+                        <p><strong>Core Stack:</strong> Conversational AI Frameworks, Node.js Orchestration layer, Custom Intent Engines, Omni-Channel APIs.</p>
+                        <p><strong>Methodology:</strong> Multi-agent design flows executing real-time catalog checking and routing directly to checkout points.</p>
+                        <p><strong>Impact Metrics:</strong> Redefined sales interactions for millions of users with a continuous 90% customer thumbs-up rating and zero high-severity pipeline bugs.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2: ClinikAI Assistant -->
-            <div class="pow-card rounded-xl p-6 flex flex-col justify-between min-h-[520px] h-auto pb-8 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-electricBlue-500/5 rounded-full blur-2xl pointer-events-none"></div>
+            <!-- Project 2: Spatial Systems & VR -->
+            <div class="interactive-card rounded-xl bg-cream-50 p-6 flex flex-col justify-between min-h-[520px] h-auto pb-8">
                 <div class="space-y-5">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-extrabold text-electricBlue-500 tracking-wider uppercase">Project 02 • Digital Healthcare</span>
-                        <span class="px-2 py-0.5 rounded text-[8px] font-bold bg-rust-500/10 text-rust-500">DEPLOYED</span>
+                        <span class="text-[10px] font-extrabold text-terracotta-500 tracking-wider uppercase">Spatial Engineering</span>
+                        <span class="text-xs font-bold text-charcoal-500">Unity 3D / C#</span>
                     </div>
                     <div>
-                        <h3 class="font-serif text-2xl font-bold text-charcoal-800">ClinikAI Front-Office Agent</h3>
+                        <h3 class="font-serif text-2xl font-bold text-charcoal-900">VRehab Spatial Therapeutics</h3>
                         <p class="text-xs text-charcoal-500 mt-2 font-light leading-relaxed">
-                            A complete automated virtual clinic front-desk suite handling incoming medical check-in questions, schedule availability coordination, and triaging baseline symptom queries securely.
+                            Pioneered spatial, interactive environments designed for stroke patient recovery at VSTEP and Rutgers University. Integrated live telemetry from motion sensors.
                         </p>
                     </div>
 
-                    <!-- Visual Representation -->
-                    <div class="bg-cream-100 rounded-lg p-4 h-48 flex flex-col justify-between border border-cream-300 shadow-inner">
-                        <div class="flex items-center justify-between">
-                            <span class="text-electricBlue-500 font-mono text-[9px] uppercase tracking-widest">Triaging Interface</span>
-                            <span class="text-charcoal-400 font-mono text-[8px]">HIPAA Compliant</span>
+                    <!-- Interactive Live Widget -->
+                    <div class="bg-charcoal-900 rounded-lg p-4 h-48 flex flex-col justify-between relative overflow-hidden border border-cream-300 shadow-inner">
+                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(194,89,63,0.15),transparent)]"></div>
+                        <div class="flex justify-between items-start z-10">
+                            <span class="text-[9px] font-mono text-terracotta-400">SYS_VIEWPORTS: UPPER_EXTREMITY_TRACKER</span>
+                            <span class="text-[8px] font-mono text-cream-300 bg-charcoal-800 px-1.5 py-0.5 rounded">90 FPS Fixed</span>
                         </div>
-                        <div class="space-y-2 text-[10px] font-mono text-charcoal-800">
-                            <div class="text-rust-500">&gt; Patient Check-In Requested...</div>
-                            <div class="bg-cream-200 p-2 rounded text-charcoal-900 border border-cream-300">
-                                <strong>Agentic Router:</strong> Triage matches Category B (Routine Check). Checking schedule records for nearest clinical opening slot.
-                            </div>
+                        <div class="w-full flex items-center justify-center py-4 z-10">
+                            <svg class="w-20 h-20 text-terracotta-500 animate-[spin_10s_linear_infinite]" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="1.5" stroke-dasharray="10 10" fill="none"/>
+                                <line x1="50" y1="10" x2="50" y2="90" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                                <line x1="10" y1="50" x2="90" y2="50" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                                <rect x="45" y="45" width="10" height="10" fill="currentColor" rx="2" class="animate-pulse"/>
+                            </svg>
                         </div>
-                        <div class="flex justify-between text-[8px] text-charcoal-400 font-mono uppercase">
-                            <span>Status: HIPAA Validated</span>
-                            <span>Engine: Dialogflow CX</span>
+                        <div class="flex justify-between text-[8px] font-mono text-charcoal-500 z-10 uppercase border-t border-charcoal-800 pt-2">
+                            <span>Sensors: Kinect V2 / CyberGlove</span>
+                            <span>Calibration: Complete</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="pt-6 mt-6 border-t border-cream-300">
-                    <button onclick="toggleAccordion('pro-spec-2')" class="w-full flex items-center justify-between text-xs font-bold text-rust-500 hover:text-rust-600 uppercase tracking-wider focus:outline-none">
-                        <span>Project Architecture Specs</span>
-                        <i id="pro-spec-2-icon" class="ph ph-caret-down text-sm transition-transform"></i>
+                    <button onclick="toggleAccordion('project-2-details')" class="w-full flex items-center justify-between text-xs font-bold text-terracotta-500 hover:text-terracotta-600 transition-colors uppercase tracking-wider focus:outline-none">
+                        <span>Clinical System Specifications</span>
+                        <i id="project-2-details-icon" class="ph ph-caret-down text-sm transition-transform"></i>
                     </button>
-                    <div id="pro-spec-2" class="accordion-content text-xs text-charcoal-500 space-y-2 mt-4 bg-cream-50 p-4 rounded border border-cream-300">
-                        <p><strong>Core Stack:</strong> Dialogflow CX state flow maps, HIPAA-compliant secure database vectors, and calendar sync connectors.</p>
-                        <p><strong>Outcome Goal:</strong> Lowers the processing load of incoming front-office queries, triaging patients seamlessly to appropriate care openings.</p>
+                    <div id="project-2-details" class="accordion-content text-xs text-charcoal-500 space-y-2 mt-4 bg-cream-100/60 p-4 rounded border border-cream-300">
+                        <p><strong>Core Stack:</strong> Unity 3D Engine, C#, MATLAB analytical script libraries, hardware sensor integrations.</p>
+                        <p><strong>The Solution:</strong> Structured physics engine parameters mapping hand and joint vectors into game interfaces, translating spatial activities directly into neuro-recovery scores.</p>
+                        <p><strong>Academic Publications:</strong> Formative evaluation and stepping game validation published via Rutgers and NJIT research operations.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 3: AuraTab Dashboard -->
-            <div class="pow-card rounded-xl p-6 flex flex-col justify-between min-h-[520px] h-auto pb-8 relative overflow-hidden">
+            <!-- Project 3: NASA & US Army Telemetry -->
+            <div class="interactive-card rounded-xl bg-cream-50 p-6 flex flex-col justify-between min-h-[520px] h-auto pb-8">
                 <div class="space-y-5">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-extrabold text-rust-500 tracking-wider uppercase">Project 03 • MicroSaaS Extension</span>
-                        <span class="px-2 py-0.5 rounded text-[8px] font-bold bg-green-500/10 text-green-600">LIVE</span>
+                        <span class="text-[10px] font-extrabold text-terracotta-500 tracking-wider uppercase">Biomedical Telemetry</span>
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-blue-100 text-blue-700 text-[8px] font-bold">NASA Standard</span>
                     </div>
                     <div>
-                        <h3 class="font-serif text-2xl font-bold text-charcoal-800">AuraTab Chrome Dashboard</h3>
+                        <h3 class="font-serif text-2xl font-bold text-charcoal-900">NASA & US Army Physiological Monitor</h3>
                         <p class="text-xs text-charcoal-500 mt-2 font-light leading-relaxed">
-                            A standalone MicroSaaS browser utility transforming standard Chrome tab layouts into a unified daily task workspace, tracking schedule deadlines, requirements, and metric limits.
+                            Architected ambulatory telemetry acquisition arrays at the Veterans Administration. Withstood physical extreme forces up to 3G, logging EEG, capnograph, and core bio-metrics.
                         </p>
                     </div>
 
-                    <!-- Visual Representation -->
-                    <div class="bg-cream-100 rounded-lg p-4 h-48 flex flex-col justify-between border border-cream-300 shadow-inner">
+                    <!-- Interactive Live Widget -->
+                    <div class="bg-charcoal-900 rounded-lg p-4 h-48 flex flex-col justify-between font-mono text-[11px] text-cream-100 border border-cream-300 shadow-inner">
                         <div class="flex items-center justify-between">
-                            <span class="text-rust-500 font-mono text-[9px] uppercase">Chrome New Tab View</span>
-                            <span class="text-charcoal-400 font-mono text-[8px]">Ver 1.4.2</span>
+                            <span class="text-red-400 text-[9px] uppercase tracking-widest font-bold">Biomedical Stream</span>
+                            <span class="text-cream-300 text-[9px]">EEG / HR: 74 BPM</span>
                         </div>
-                        <div class="grid grid-cols-3 gap-2 my-2">
-                            <div class="bg-cream-50 border border-cream-300 p-2 rounded text-center">
-                                <span class="block text-[11px] font-bold text-rust-500">92%</span>
-                                <span class="text-[7px] uppercase tracking-wider text-charcoal-400">Focus Score</span>
-                            </div>
-                            <div class="bg-cream-50 border border-cream-300 p-2 rounded text-center">
-                                <span class="block text-[11px] font-bold text-electricBlue-500">4 / 6</span>
-                                <span class="text-[7px] uppercase tracking-wider text-charcoal-400">Task Loops</span>
-                            </div>
-                            <div class="bg-cream-50 border border-cream-300 p-2 rounded text-center">
-                                <span class="block text-[11px] font-bold text-charcoal-800">12m</span>
-                                <span class="text-[7px] uppercase tracking-wider text-charcoal-400">Muted Time</span>
-                            </div>
+                        <div class="my-4">
+                            <svg class="w-full h-12 text-terracotta-500" viewBox="0 0 100 30" preserveAspectRatio="none">
+                                <path d="M 0 15 L 20 15 L 24 5 L 28 25 L 32 15 L 45 15 L 48 2 L 52 28 L 56 15 L 75 15 L 78 8 L 81 22 L 84 15 L 100 15" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                            </svg>
                         </div>
-                        <div class="text-[8px] text-charcoal-400 font-mono uppercase text-center">
-                            Synchronized Across Active Workspaces
+                        <div class="flex justify-between items-center text-[8px] text-charcoal-500 border-t border-charcoal-800 pt-2">
+                            <span>Force Level: 3G Limit Enabled</span>
+                            <span>Signal Loss: &lt; 0.05%</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="pt-6 mt-6 border-t border-cream-300">
-                    <button onclick="toggleAccordion('pro-spec-3')" class="w-full flex items-center justify-between text-xs font-bold text-rust-500 hover:text-rust-600 uppercase tracking-wider focus:outline-none">
-                        <span>Project Architecture Specs</span>
-                        <i id="pro-spec-3-icon" class="ph ph-caret-down text-sm transition-transform"></i>
+                    <button onclick="toggleAccordion('project-3-details')" class="w-full flex items-center justify-between text-xs font-bold text-terracotta-500 hover:text-terracotta-600 transition-colors uppercase tracking-wider focus:outline-none">
+                        <span>Biomedical System Specifications</span>
+                        <i id="project-3-details-icon" class="ph ph-caret-down text-sm transition-transform"></i>
                     </button>
-                    <div id="pro-spec-3" class="accordion-content text-xs text-charcoal-500 space-y-2 mt-4 bg-cream-50 p-4 rounded border border-cream-300">
-                        <p><strong>Core Stack:</strong> Standard Chrome Extension Manifest v3, SQLite browser cache models, and custom calendar synchronizer hooks.</p>
-                        <p><strong>Outcome Goal:</strong> Eliminates work-to-personal context switching by consolidating tasks, reminders, and widgets inside a sleek browser workspace.</p>
+                    <div id="project-3-details" class="accordion-content text-xs text-charcoal-500 space-y-2 mt-4 bg-cream-100/60 p-4 rounded border border-cream-300">
+                        <p><strong>Core Technology:</strong> Labview integration, Xcode interfaces, analog filter circuits, MATLAB numerical algorithms.</p>
+                        <p><strong>System Innovation:</strong> Upgraded historical telemetry modules by establishing high-integrity protocols, achieving 70% bandwidth optimization and reducing user-driven data losses by 95%.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 4: HabitArc productivity Engine -->
-            <div class="pow-card rounded-xl p-6 flex flex-col justify-between min-h-[520px] h-auto pb-8 relative overflow-hidden">
+            <!-- Project 4: Multi-Agent LLM Evaluation -->
+            <div class="interactive-card rounded-xl bg-cream-50 p-6 flex flex-col justify-between min-h-[520px] h-auto pb-8">
                 <div class="space-y-5">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-extrabold text-electricBlue-500 tracking-wider uppercase">Project 04 • Gamified Habit Builder</span>
-                        <span class="px-2 py-0.5 rounded text-[8px] font-bold bg-green-500/10 text-green-600">LIVE</span>
+                        <span class="text-[10px] font-extrabold text-terracotta-500 tracking-wider uppercase">AI Operations</span>
+                        <span class="text-xs font-mono text-terracotta-500">v1.1.4</span>
                     </div>
                     <div>
-                        <h3 class="font-serif text-2xl font-bold text-charcoal-800">HabitArc Gamified Habits</h3>
+                        <h3 class="font-serif text-2xl font-bold text-charcoal-900">LLM Evaluation & Agent Benchmarks</h3>
                         <p class="text-xs text-charcoal-500 mt-2 font-light leading-relaxed">
-                            An outcome tracking dashboard application framing continuous micro-victories, task loops, and positive habits as physical milestones with level achievements.
+                            Spearheading research into automated verification models and diagnostic pipelines. Evaluates reasoning traces, latency budgets, and systemic correctness of multi-agent LLM systems.
                         </p>
                     </div>
 
-                    <!-- Visual Representation -->
-                    <div class="bg-cream-100 rounded-lg p-4 h-48 flex flex-col justify-between border border-cream-300 shadow-inner">
-                        <div class="flex items-center justify-between">
-                            <span class="text-rust-500 font-mono text-[9px] uppercase">Habit Loops</span>
-                            <span class="text-charcoal-400 font-mono text-[8px]">Daily Streak Active</span>
+                    <!-- Interactive Live Widget -->
+                    <div class="bg-charcoal-900 rounded-lg p-4 h-48 flex flex-col justify-between font-mono text-[10px] text-cream-100 border border-cream-300 shadow-inner">
+                        <div class="space-y-1 overflow-y-auto max-h-32">
+                            <div class="text-charcoal-500">[11:04:12] Initiating Eval Harness...</div>
+                            <div class="text-cream-300"><span class="text-blue-400">✓</span> Llama-3-70B: Accuracy 92.4% | Latency: 240ms</div>
+                            <div class="text-cream-300"><span class="text-blue-400">✓</span> GPT-4o-Mini: Accuracy 91.1% | Latency: 110ms</div>
+                            <div class="text-yellow-400"><span class="text-yellow-500">⚠</span> Agent routing conflict detected. Resolving dynamically...</div>
+                            <div class="text-green-400"><span class="text-green-500">✓</span> Conflict cleared. Verification loop successful.</div>
                         </div>
-                        <div class="space-y-2 text-[10px] font-mono text-charcoal-800">
-                            <div class="flex justify-between items-center">
-                                <span>Habit 1: RAG Evaluation Loop</span>
-                                <span class="text-green-600 font-bold">14 Days</span>
-                            </div>
-                            <div class="w-full bg-cream-200 h-1.5 rounded-full overflow-hidden">
-                                <div class="bg-gradient-to-r from-rust-400 to-rust-500 h-full w-[100%]"></div>
-                            </div>
-                            <div class="flex justify-between items-center pt-2">
-                                <span>Habit 2: Telemetry Calibration Check</span>
-                                <span class="text-green-600 font-bold">8 Days</span>
-                            </div>
-                            <div class="w-full bg-cream-200 h-1.5 rounded-full overflow-hidden">
-                                <div class="bg-gradient-to-r from-electricBlue-400 to-electricBlue-500 h-full w-[80%]"></div>
-                            </div>
-                        </div>
-                        <div class="text-[8px] text-charcoal-400 font-mono uppercase text-center">
-                            Level Up Reward Matrix Active
+                        <div class="flex items-center justify-between text-[8px] text-charcoal-500 border-t border-charcoal-800 pt-2 uppercase">
+                            <span>Workflow: Agentic Routing</span>
+                            <span>Evaluation Loop: Active</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="pt-6 mt-6 border-t border-cream-300">
-                    <button onclick="toggleAccordion('pro-spec-4')" class="w-full flex items-center justify-between text-xs font-bold text-rust-500 hover:text-rust-600 uppercase tracking-wider focus:outline-none">
-                        <span>Project Architecture Specs</span>
-                        <i id="pro-spec-4-icon" class="ph ph-caret-down text-sm transition-transform"></i>
+                    <button onclick="toggleAccordion('project-4-details')" class="w-full flex items-center justify-between text-xs font-bold text-terracotta-500 hover:text-terracotta-600 transition-colors uppercase tracking-wider focus:outline-none">
+                        <span>AI Benchmarking Specifications</span>
+                        <i id="project-4-details-icon" class="ph ph-caret-down text-sm transition-transform"></i>
                     </button>
-                    <div id="pro-spec-4" class="accordion-content text-xs text-charcoal-500 space-y-2 mt-4 bg-cream-50 p-4 rounded border border-cream-300">
-                        <p><strong>Core Stack:</strong> React dynamic components, Local Storage persistence layers, and gamified streak counters.</p>
-                        <p><strong>Outcome Goal:</strong> Encourages steady progress by translating technical or personal goals into clear quest logs.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 5: GoLaunch GTM Agent -->
-            <div class="pow-card rounded-xl p-6 flex flex-col justify-between min-h-[520px] h-auto pb-8 relative overflow-hidden">
-                <div class="space-y-5">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-extrabold text-rust-500 tracking-wider uppercase">Project 05 • Go-To-Market AI</span>
-                        <span class="px-2 py-0.5 rounded text-[8px] font-bold bg-zinc-500/10 text-zinc-600">ALPHA</span>
-                    </div>
-                    <div>
-                        <h3 class="font-serif text-2xl font-bold text-charcoal-800">GoLaunch Strategy Agent</h3>
-                        <p class="text-xs text-charcoal-500 mt-2 font-light leading-relaxed">
-                            An automated business planner agent simulating target market landscapes, analyzing pricing structures, and mapping competitors to auto-generate PDF strategic playbooks.
-                        </p>
-                    </div>
-
-                    <!-- Visual Representation -->
-                    <div class="bg-cream-100 rounded-lg p-4 h-48 flex flex-col justify-between border border-cream-300 shadow-inner">
-                        <div class="flex items-center justify-between">
-                            <span class="text-electricBlue-500 font-mono text-[9px] uppercase">GTM Analyzer</span>
-                            <span class="text-charcoal-400 font-mono text-[8px]">Simulating Target Segments</span>
-                        </div>
-                        <div class="space-y-2 text-[10px] font-mono text-charcoal-800">
-                            <div>1. Market Profile: Clinical SaaS Developers</div>
-                            <div>2. Simulated Friction: Integration Latency</div>
-                            <div class="text-rust-500 font-bold">&gt; Playbook auto-generation triggered...</div>
-                        </div>
-                        <div class="text-[8px] text-charcoal-400 font-mono uppercase text-center">
-                            Core Strategy Framework: Dynamic Value Map
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-6 mt-6 border-t border-cream-300">
-                    <button onclick="toggleAccordion('pro-spec-5')" class="w-full flex items-center justify-between text-xs font-bold text-rust-500 hover:text-rust-600 uppercase tracking-wider focus:outline-none">
-                        <span>Project Architecture Specs</span>
-                        <i id="pro-spec-5-icon" class="ph ph-caret-down text-sm transition-transform"></i>
-                    </button>
-                    <div id="pro-spec-5" class="accordion-content text-xs text-charcoal-500 space-y-2 mt-4 bg-cream-50 p-4 rounded border border-cream-300">
-                        <p><strong>Core Stack:</strong> Gemini Flash reasoning models, custom JSON formatting patterns, and automated report generators.</p>
-                        <p><strong>Outcome Goal:</strong> Empowers business developers and teams by translating high-level target criteria into concrete product launch routes.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 6: OmniWrite AI Dashboard -->
-            <div class="pow-card rounded-xl p-6 flex flex-col justify-between min-h-[520px] h-auto pb-8 relative overflow-hidden">
-                <div class="space-y-5">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-extrabold text-electricBlue-500 tracking-wider uppercase">Project 06 • Social Workspace</span>
-                        <span class="px-2 py-0.5 rounded text-[8px] font-bold bg-rust-500/10 text-rust-500">DEPLOYED</span>
-                    </div>
-                    <div>
-                        <h3 class="font-serif text-2xl font-bold text-charcoal-800">OmniWrite AI Aggregator</h3>
-                        <p class="text-xs text-charcoal-500 mt-2 font-light leading-relaxed">
-                            A central social platform scheduler automating content ideas generation, scheduled postings, and multi-channel traffic metric monitoring from a clean main interface.
-                        </p>
-                    </div>
-
-                    <!-- Visual Representation -->
-                    <div class="bg-cream-100 rounded-lg p-4 h-48 flex flex-col justify-between border border-cream-300 shadow-inner">
-                        <div class="flex items-center justify-between">
-                            <span class="text-rust-500 font-mono text-[9px] uppercase">Aggregator Stream</span>
-                            <span class="text-charcoal-400 font-mono text-[8px]">Connected: 3 Platforms</span>
-                        </div>
-                        <div class="space-y-1 text-[10px] font-mono text-charcoal-800">
-                            <div class="flex justify-between">
-                                <span>Substack Queue: Draft 2</span>
-                                <span class="text-rust-500 font-bold">14 July</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>LinkedIn Queue: Post 4</span>
-                                <span class="text-electricBlue-500 font-bold">12 July</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>Blogger Archive: Synced</span>
-                                <span class="text-green-600 font-bold">Complete</span>
-                            </div>
-                        </div>
-                        <div class="text-[8px] text-charcoal-400 font-mono uppercase text-center">
-                            Analytics Summary Active
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-6 mt-6 border-t border-cream-300">
-                    <button onclick="toggleAccordion('pro-spec-6')" class="w-full flex items-center justify-between text-xs font-bold text-rust-500 hover:text-rust-600 uppercase tracking-wider focus:outline-none">
-                        <span>Project Architecture Specs</span>
-                        <i id="pro-spec-6-icon" class="ph ph-caret-down text-sm transition-transform"></i>
-                    </button>
-                    <div id="pro-spec-6" class="accordion-content text-xs text-charcoal-500 space-y-2 mt-4 bg-cream-50 p-4 rounded border border-cream-300">
-                        <p><strong>Core Stack:</strong> Next.js frontend, Python FastAPI backend, social media APIs (LinkedIn, Twitter), and chron job schedulers.</p>
-                        <p><strong>Outcome Goal:</strong> Centralizes content strategy, automating repetitive posting loops while providing unified engagement analytics.</p>
+                    <div id="project-4-details" class="accordion-content text-xs text-charcoal-500 space-y-2 mt-4 bg-cream-100/60 p-4 rounded border border-cream-300">
+                        <p><strong>Strategy Framework:</strong> Establishing structural evaluation metrics to detect hallucination cycles and execution latency within automated, agent-based flows.</p>
+                        <p><strong>Business Outcome:</strong> Protects conversational systems from failure modes while keeping consumer experiences consistent.</p>
                     </div>
                 </div>
             </div>
@@ -948,17 +723,16 @@
         </div>
     </div>
 
-   <!-- PUBLICATIONS VIEW SECTION -->
-    <div id="view-publications" class="view-container hidden-view relative z-10 max-w-6xl mx-auto px-6 py-20 lg:py-28 space-y-24">
+    <div id="view-publications" class="view-container hidden max-w-6xl mx-auto px-6 py-20 lg:py-28 space-y-24">
         
         <!-- SECTION 1: Articles & Thoughts -->
         <section class="space-y-12">
             <div class="space-y-4">
                 <div class="flex items-center gap-3">
-                    <span class="text-[10px] font-extrabold tracking-widest text-rust-500 uppercase">Thought Leadership</span>
+                    <span class="text-[10px] font-extrabold tracking-widest text-terracotta-500 uppercase">Thought Leadership</span>
                     <div class="h-[1px] bg-cream-300 flex-grow"></div>
                 </div>
-                <h2 class="font-serif text-3xl lg:text-5xl font-bold text-charcoal-800">Articles &amp; Editorial Drafts</h2>
+                <h2 class="font-serif text-3xl lg:text-5xl font-black text-charcoal-900">Articles & Editorial Drafts</h2>
                 <p class="text-charcoal-500 text-sm max-w-2xl font-light">
                     Follow my research, architectural breakdowns, and product management strategies across Substack, LinkedIn, and historical analytical archives.
                 </p>
@@ -966,166 +740,185 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Substack Card -->
-                <div class="pow-card p-6 rounded-lg flex flex-col justify-between h-64">
+                <div class="interactive-card p-6 rounded-lg bg-cream-50 flex flex-col justify-between h-64 hover:border-terracotta-500">
                     <div class="space-y-3">
-                        <div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-charcoal-400">
+                        <div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-charcoal-500">
                             <span>Agentic Systems</span>
-                            <span class="text-rust-500">Substack Draft</span>
+                            <span class="text-terracotta-500">Substack Draft</span>
                         </div>
-                        <h4 class="font-serif text-lg font-bold text-charcoal-800 leading-snug">
+                        <h4 class="font-serif text-lg font-bold text-charcoal-900 leading-snug">
                             Benchmarking Latency Budgets in Multi-Agent Flows
                         </h4>
                         <p class="text-xs text-charcoal-500 font-light leading-relaxed">
                             Explaining how parallel agent execution and decision paths affect end-user experiences. Outlining diagnostic steps to measure performance.
                         </p>
                     </div>
-                    <a href="https://substack.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-rust-500 hover:text-rust-600 transition-colors uppercase tracking-wider">
+                    <a href="https://substack.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-terracotta-500 hover:text-terracotta-600 transition-colors uppercase tracking-wider">
                         Subscribe for Drafts <i class="ph ph-arrow-right"></i>
                     </a>
                 </div>
 
                 <!-- LinkedIn Card -->
-                <div class="pow-card p-6 rounded-lg flex flex-col justify-between h-64">
+                <div class="interactive-card p-6 rounded-lg bg-cream-50 flex flex-col justify-between h-64 hover:border-terracotta-500">
                     <div class="space-y-3">
-                        <div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-charcoal-400">
+                        <div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-charcoal-500">
                             <span>Spatial Design</span>
-                            <span class="text-electricBlue-500">LinkedIn Article</span>
+                            <span class="text-blue-600">LinkedIn Article</span>
                         </div>
-                        <h4 class="font-serif text-lg font-bold text-charcoal-800 leading-snug">
+                        <h4 class="font-serif text-lg font-bold text-charcoal-900 leading-snug">
                             Spatial UI Lessons: Translating VR Diagnostics to SaaS
                         </h4>
                         <p class="text-xs text-charcoal-500 font-light leading-relaxed">
                             Why the calibration and sensory data principles used in biomedical systems provide the foundation for low-friction consumer AI interfaces.
                         </p>
                     </div>
-                    <a href="https://www.linkedin.com/in/harishdamodaran" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-rust-500 hover:text-rust-600 transition-colors uppercase tracking-wider">
+                    <a href="https://www.linkedin.com/in/harishdamodaran" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-terracotta-500 hover:text-terracotta-600 transition-colors uppercase tracking-wider">
                         Follow on LinkedIn <i class="ph ph-arrow-right"></i>
                     </a>
                 </div>
 
                 <!-- Blogger Profile integration -->
-                <div class="pow-card p-6 rounded-lg flex flex-col justify-between h-64">
+                <div class="interactive-card p-6 rounded-lg bg-cream-50 flex flex-col justify-between h-64 hover:border-terracotta-500">
                     <div class="space-y-3">
-                        <div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-charcoal-400">
-                            <span>Deep Tech &amp; Ethics</span>
-                            <span class="text-amber-600">Blogger Archives</span>
+                        <div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-charcoal-500">
+                            <span>Deep Tech & Ethics</span>
+                            <span class="text-amber-700">Blogger Archives</span>
                         </div>
-                        <h4 class="font-serif text-lg font-bold text-charcoal-800 leading-snug">
-                            Blogger Archive Portal (Deep Tech &amp; Philosophy)
+                        <h4 class="font-serif text-lg font-bold text-charcoal-900 leading-snug">
+                            Blogger Archive Portal (Deep Tech & Philosophy)
                         </h4>
                         <p class="text-xs text-charcoal-500 font-light leading-relaxed">
                             Check out my past blogposts, personal writings, and early reflections on technology design, bio-systems, and emerging trends.
                         </p>
                     </div>
-                    <a href="https://www.blogger.com/profile/00190589767747752118" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 hover:text-amber-700 transition-colors uppercase tracking-wider">
+                    <a href="https://www.blogger.com/profile/00190589767747752118" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800 transition-colors uppercase tracking-wider">
                         Explore blogger archives <i class="ph ph-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
             <!-- Integrated Newsletter Form -->
-            <div class="rounded-xl border border-cream-300 bg-cream-50 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm">
+            <div class="rounded-xl border border-cream-300 bg-cream-50 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div class="max-w-md space-y-1">
-                    <h4 class="font-serif text-lg font-bold text-charcoal-800">Receive Direct Engineering Breakdowns</h4>
+                    <h4 class="font-serif text-lg font-bold text-charcoal-900">Receive Direct Engineering Breakdowns</h4>
                     <p class="text-xs text-charcoal-500 font-light leading-relaxed">
                         Join recruiters, technical leaders, and developers to receive my technical summaries and product design blueprints as soon as they are published.
                     </p>
                 </div>
                 <form onsubmit="handleSubstackSubscribe(event)" class="flex flex-col sm:flex-row flex-grow max-w-md gap-3">
-                    <input id="sub-email" type="email" required="" placeholder="Enter email address" class="flex-grow p-3 rounded-lg border border-cream-300 bg-cream-100 text-xs text-charcoal-800 focus:outline-none focus:border-rust-400 transition-colors">
-                    <button type="submit" class="px-6 py-3 bg-rust-500 hover:bg-rust-600 text-cream-100 font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-md shrink-0">
+                    <input id="sub-email" type="email" required placeholder="Enter email address" class="flex-grow p-3 rounded-lg border border-cream-300 bg-cream-100 text-xs text-charcoal-900 focus:outline-none">
+                    <button type="submit" class="px-6 py-3 bg-terracotta-500 hover:bg-terracotta-600 text-cream-100 font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-sm shrink-0">
                         Subscribe
                     </button>
                 </form>
             </div>
         </section>
 
-        <!-- SECTION 2: Scientific Citations -->
         <section class="space-y-12">
             <div class="space-y-4">
                 <div class="flex items-center gap-3">
-                    <span class="text-[10px] font-extrabold tracking-widest text-rust-500 uppercase">Scientific Record</span>
+                    <span class="text-[10px] font-extrabold tracking-widest text-terracotta-500 uppercase">Scientific Record</span>
                     <div class="h-[1px] bg-cream-300 flex-grow"></div>
                 </div>
-                <h2 class="font-serif text-3xl lg:text-5xl font-bold text-charcoal-800">Peer Reviewed Scientific Publications</h2>
+                <h2 class="font-serif text-3xl lg:text-5xl font-black text-charcoal-900">Peer Reviewed Scientific Publications</h2>
                 <p class="text-charcoal-500 text-sm max-w-2xl font-light">
                     Peer-reviewed clinical research and engineering publications indexing haptic robotics, virtual environment diagnostics, and biomedical telemetry.
                 </p>
             </div>
 
+            <!-- Publications Citations Layout -->
             <div class="space-y-6">
                 
                 <!-- Pub 1 -->
-                <div class="p-6 rounded-xl border border-cream-300 bg-cream-50 space-y-3 shadow-sm">
+                <div class="p-6 rounded-xl border border-cream-300 bg-cream-50 space-y-3">
                     <div class="flex flex-wrap items-center gap-2">
-                        <span class="px-2.5 py-0.5 rounded-full bg-rust-500/10 text-rust-600 text-[9px] font-bold uppercase tracking-wider">Stroke Rehabilitation</span>
-                        <span class="text-[10px] font-mono text-charcoal-400">JMIR Medical Education, 2023</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-terracotta-100 text-terracotta-600 text-[9px] font-bold uppercase tracking-wider">Stroke Rehabilitation</span>
+                        <span class="text-[10px] font-mono text-charcoal-500">JMIR Medical Education, 2023</span>
                     </div>
-                    <h3 class="font-serif text-lg font-bold text-charcoal-800">
+                    <h3 class="font-serif text-lg font-bold text-charcoal-900">
                         Student and Faculty Perspectives on the Usefulness and Usability of a Digital Health Educational Tool to Teach Standardized Assessment of Persons After Stroke: Mixed Methods Study.
                     </h3>
                     <p class="text-xs text-charcoal-500 leading-relaxed font-light">
-                        <strong>Authors:</strong> Judith Deutsch, John Luca Palmieri, Holly Gorin, <strong class="font-semibold text-charcoal-800">Harish Damodaran</strong>, Jordan Van Eps, Augustus Wendell, Donghee Wohn.
+                        <strong>Authors:</strong> Judith Deutsch, John Luca Palmieri, Holly Gorin, <strong class="font-semibold text-charcoal-900">Harish Damodaran</strong>, Jordan Van Eps, Augustus Wendell, Donghee Wohn.
                     </p>
                     <div class="pt-2">
-                        <a href="https://www.researchgate.net/profile/Harish-Damodaran" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-rust-500 hover:text-rust-600 transition-colors uppercase tracking-wider">
+                        <a href="https://www.researchgate.net/profile/Harish-Damodaran" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-terracotta-500 hover:text-terracotta-600 transition-colors uppercase tracking-wider">
                             <i class="ph ph-bookmark-simple"></i> View on ResearchGate
                         </a>
                     </div>
                 </div>
 
                 <!-- Pub 2 -->
-                <div class="p-6 rounded-xl border border-cream-300 bg-cream-50 space-y-3 shadow-sm">
+                <div class="p-6 rounded-xl border border-cream-300 bg-cream-50 space-y-3">
                     <div class="flex flex-wrap items-center gap-2">
-                        <span class="px-2.5 py-0.5 rounded-full bg-electricBlue-500/10 text-electricBlue-600 text-[9px] font-bold uppercase tracking-wider">Active Video Games</span>
-                        <span class="text-[10px] font-mono text-charcoal-400">Journal of NeuroEngineering and Rehabilitation, 2021</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-700 text-[9px] font-bold uppercase tracking-wider">Active Video Games</span>
+                        <span class="text-[10px] font-mono text-charcoal-500">Journal of NeuroEngineering and Rehabilitation, 2021</span>
                     </div>
-                    <h3 class="font-serif text-lg font-bold text-charcoal-800">
+                    <h3 class="font-serif text-lg font-bold text-charcoal-900">
                         Comparison of neuromuscular and cardiovascular exercise intensity and enjoyment between standard of care, off-the-shelf and custom active video games for promotion of physical activity of persons post-stroke.
                     </h3>
                     <p class="text-xs text-charcoal-500 leading-relaxed font-light">
-                        <strong>Authors:</strong> Judith Deutsch, Aurora James-Palmer, <strong class="font-semibold text-charcoal-800">Harish Damodaran</strong>, Urška Puh.
+                        <strong>Authors:</strong> Judith Deutsch, Aurora James-Palmer, <strong class="font-semibold text-charcoal-900">Harish Damodaran</strong>, Urška Puh.
                     </p>
                     <div class="pt-2">
-                        <a href="https://www.researchgate.net/profile/Harish-Damodaran" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-rust-500 hover:text-rust-600 transition-colors uppercase tracking-wider">
+                        <a href="https://www.researchgate.net/profile/Harish-Damodaran" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-terracotta-500 hover:text-terracotta-600 transition-colors uppercase tracking-wider">
                             <i class="ph ph-bookmark-simple"></i> View on ResearchGate
                         </a>
                     </div>
                 </div>
 
                 <!-- Pub 3 -->
-                <div class="p-6 rounded-xl border border-cream-300 bg-cream-50 space-y-3 shadow-sm">
+                <div class="p-6 rounded-xl border border-cream-300 bg-cream-50 space-y-3">
                     <div class="flex flex-wrap items-center gap-2">
-                        <span class="px-2.5 py-0.5 rounded-full bg-green-500/10 text-green-600 text-[9px] font-bold uppercase tracking-wider">Parkinson's Diagnostics</span>
-                        <span class="text-[10px] font-mono text-charcoal-400">ResearchGate Abstract Series</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-green-100 text-green-700 text-[9px] font-bold uppercase tracking-wider">Parkinson's Diagnostics</span>
+                        <span class="text-[10px] font-mono text-charcoal-500">ResearchGate Abstract Series</span>
                     </div>
-                    <h3 class="font-serif text-lg font-bold text-charcoal-800">
+                    <h3 class="font-serif text-lg font-bold text-charcoal-900">
                         Influence of cueing, feedback and directed attention on cycling in a virtual environment: Preliminary findings in healthy adults and persons with Parkinson's disease.
                     </h3>
                     <p class="text-xs text-charcoal-500 leading-relaxed font-light">
-                        <strong>Authors:</strong> Judith Deutsch, <strong class="font-semibold text-charcoal-800">Harish Damodaran</strong>, Jordan Van Eps.
+                        <strong>Authors:</strong> Judith Deutsch, <strong class="font-semibold text-charcoal-900">Harish Damodaran</strong>, Jordan Van Eps.
                     </p>
                     <div class="pt-2">
-                        <a href="https://www.researchgate.net/profile/Harish-Damodaran" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-rust-500 hover:text-rust-600 transition-colors uppercase tracking-wider">
+                        <a href="https://www.researchgate.net/profile/Harish-Damodaran" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-terracotta-500 hover:text-terracotta-600 transition-colors uppercase tracking-wider">
                             <i class="ph ph-bookmark-simple"></i> View on ResearchGate
                         </a>
                     </div>
                 </div>
 
                 <!-- Pub 4 -->
-                <div class="p-6 rounded-xl border border-cream-300 bg-cream-50 space-y-3 shadow-sm">
+                <div class="p-6 rounded-xl border border-cream-300 bg-cream-50 space-y-3">
                     <div class="flex flex-wrap items-center gap-2">
-                        <span class="px-2.5 py-0.5 rounded-full bg-yellow-500/10 text-yellow-600 text-[9px] font-bold uppercase tracking-wider">Biomedical Engineering</span>
-                        <span class="text-[10px] font-mono text-charcoal-400">Int. Journal of Medical Engineering &amp; Informatics</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-yellow-100 text-yellow-800 text-[9px] font-bold uppercase tracking-wider">Biomedical Engineering</span>
+                        <span class="text-[10px] font-mono text-charcoal-500">Int. Journal of Medical Engineering & Informatics</span>
                     </div>
-                    <h3 class="font-serif text-lg font-bold text-charcoal-800">
+                    <h3 class="font-serif text-lg font-bold text-charcoal-900">
                         Nonlinear methods of analysis to examine respiratory waveform variability during oral feeding in preterm infants.
                     </h3>
                     <p class="text-xs text-charcoal-500 leading-relaxed font-light">
-                        <strong>Authors:</strong> <strong class="font-semibold text-charcoal-800">Harish Damodaran</strong>, et al.
+                        <strong>Authors:</strong> <strong class="font-semibold text-charcoal-900">Harish Damodaran</strong>, et al.
                     </p>
                     <div class="pt-2">
-                        <a href="https://www.researchgate.net/profile/Harish-Damodaran" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-rust-500 hover:text-rust-600 transition-colors uppercase tracking-wider">
+                        <a href="https://www.researchgate.net/profile/Harish-Damodaran" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-terracotta-500 hover:text-terracotta-600 transition-colors uppercase tracking-wider">
+                            <i class="ph ph-bookmark-simple"></i> View on ResearchGate
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pub 5 -->
+                <div class="p-6 rounded-xl border border-cream-300 bg-cream-50 space-y-3">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-700 text-[9px] font-bold uppercase tracking-wider">Haptics & VR</span>
+                        <span class="text-[10px] font-mono text-charcoal-500">NJIT ROBOT RAVR Laboratory Series</span>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-charcoal-900">
+                        Examining the manipulation of the dynamic properties of virtual objects to optimize upper extremity rehabilitation activities.
+                    </h3>
+                    <p class="text-xs text-charcoal-500 leading-relaxed font-light">
+                        <strong>Authors:</strong> <strong class="font-semibold text-charcoal-900">Harish Damodaran</strong>, Viboon Sangveraphunsiri.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://www.researchgate.net/profile/Harish-Damodaran" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-terracotta-500 hover:text-terracotta-600 transition-colors uppercase tracking-wider">
                             <i class="ph ph-bookmark-simple"></i> View on ResearchGate
                         </a>
                     </div>
@@ -1136,230 +929,254 @@
 
     </div>
 
-    <!-- Pitch Modal Overlay -->
-    <div id="pitch-modal" class="fixed inset-0 bg-charcoal-900/60 backdrop-blur-sm z-[100] hidden flex items-center justify-center opacity-0 transition-opacity duration-300 p-4">
-        <div class="bg-cream-100 w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300" id="pitch-modal-content">
-            <div class="p-6 border-b border-cream-300 flex justify-between items-center bg-cream-50">
-                <h3 class="font-serif text-2xl font-bold text-charcoal-800">Start a Conversation</h3>
-                <button onclick="closePitchModal()" class="text-charcoal-400 hover:text-rust-500 transition-colors p-1">
-                    <i class="ph ph-x text-xl"></i>
+    <footer class="border-t border-cream-300 bg-cream-50/50 py-16 text-xs text-charcoal-500 no-print mt-24">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            <div class="space-y-3">
+                <button onclick="handleNav('home', 'top')" class="font-serif text-lg font-bold text-charcoal-900 flex items-center gap-2 text-left focus:outline-none">
+                    <span class="w-6 h-6 rounded bg-terracotta-500 text-cream-100 flex items-center justify-center font-bold text-xs font-serif shadow-sm">H</span>
+                    Harish Damodaran
                 </button>
-            </div>
-            <div class="p-6 space-y-4">
-                <p class="text-sm text-charcoal-500 font-light">
-                    Interested in architectural reviews, fractional AI product leadership, or collaborating on a multi-agent system? Drop your details below.
+                <p class="max-w-xs text-charcoal-500 font-light leading-relaxed">
+                    Principal AI Product Leader & Solutions Architect. Delivering low-latency automated conversational engines and spatial virtual systems.
                 </p>
-                <form class="space-y-4" onsubmit="event.preventDefault(); closePitchModal();">
-                    <div>
-                        <label class="block text-xs font-bold text-charcoal-800 mb-1 uppercase tracking-wide">Name</label>
-                        <input type="text" class="w-full bg-cream-50 border border-cream-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-rust-500 focus:ring-1 focus:ring-rust-500 transition-all" placeholder="Jane Doe" required>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-charcoal-800 mb-1 uppercase tracking-wide">Email</label>
-                        <input type="email" class="w-full bg-cream-50 border border-cream-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-rust-500 focus:ring-1 focus:ring-rust-500 transition-all" placeholder="jane@company.com" required>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-charcoal-800 mb-1 uppercase tracking-wide">Strategic Need</label>
-                        <textarea class="w-full bg-cream-50 border border-cream-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-rust-500 focus:ring-1 focus:ring-rust-500 transition-all h-24 resize-none" placeholder="How can we build outcome-driven pipelines together?" required></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-rust-500 hover:bg-rust-600 text-cream-100 font-bold py-3 rounded-lg shadow-md transition-all flex items-center justify-center gap-2">
-                        Send Pitch <i class="ph ph-paper-plane-right"></i>
-                    </button>
-                </form>
+            </div>
+            
+            <div class="flex flex-col gap-2.5">
+                <h5 class="font-bold text-charcoal-900 uppercase tracking-widest mb-1 text-[10px]">Strategic Portals</h5>
+                <a href="https://github.com/SandboxDigitaal/" target="_blank" class="hover:text-terracotta-500 transition-colors flex items-center gap-1.5"><i class="ph ph-github-logo text-base text-terracotta-500"></i> Sandbox GitHub</a>
+                <a href="https://www.linkedin.com/in/harishdamodaran" target="_blank" class="hover:text-terracotta-500 transition-colors flex items-center gap-1.5"><i class="ph ph-linkedin-logo text-base text-terracotta-500"></i> Corporate LinkedIn Portal</a>
+                <a href="https://www.blogger.com/profile/00190589767747752118" target="_blank" class="hover:text-terracotta-500 transition-colors flex items-center gap-1.5"><i class="ph ph-notebook text-base text-terracotta-500"></i> Blogger Profile Archives</a>
+            </div>
+
+            <div class="space-y-3">
+                <h5 class="font-bold text-charcoal-900 uppercase tracking-widest mb-1 text-[10px]">Contact & Pitch</h5>
+                <p class="leading-relaxed font-light">
+                    Ready to discuss multi-agent platform evaluations, low-latency telemedicine arrays, or technical project leadership?
+                </p>
+                <a href="mailto:harishdamodaran.01@gmail.com" class="font-semibold text-charcoal-900 hover:text-terracotta-500 transition-colors text-sm break-all">
+                    harishdamodaran.01@gmail.com
+                </a>
             </div>
         </div>
-    </div>
 
-    <!-- Footer Section -->
-    <footer class="bg-charcoal-900 text-cream-100 py-10 mt-auto relative z-10 no-print">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-3">
-                <span class="w-8 h-8 rounded-md bg-rust-500 text-cream-100 flex items-center justify-center font-bold text-base font-serif">HD</span>
-                <span class="font-serif text-lg font-bold tracking-tight">Harish Damodaran</span>
-            </div>
-            
-            <p class="text-xs text-charcoal-400 font-light">
-                &copy; 2026 Harish Damodaran. All architectural blueprints reserved.
-            </p>
-            
-            <div class="flex gap-4">
-                <a href="https://www.linkedin.com/in/harishdamodaran" target="_blank" class="text-charcoal-400 hover:text-rust-400 transition-colors">
-                    <i class="ph ph-linkedin-logo text-2xl"></i>
-                </a>
-                <a href="https://github.com/SandboxDigitaal/" target="_blank" class="text-charcoal-400 hover:text-rust-400 transition-colors">
-                    <i class="ph ph-github-logo text-2xl"></i>
-                </a>
-            </div>
+        <div class="max-w-6xl mx-auto px-6 mt-12 pt-8 border-t border-cream-300 flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
+            <span class="font-light">&copy; <span id="current-year"></span> Harish Damodaran. All rights reserved.</span>
+            <span class="flex items-center gap-2 font-light">
+                Designed with Warm Editorial Elegance <i class="ph ph-heart text-terracotta-500 text-sm"></i>
+            </span>
         </div>
     </footer>
 
-    <!-- Scripts for interaction and visual background -->
-    <script>
-        // --- Navigation Logic (Single Page App routing) ---
-        function handleNav(viewId, sectionId = null) {
-            // Hide all views
-            document.querySelectorAll('.view-container').forEach(el => {
-                el.classList.add('hidden-view');
-            });
-            
-            // Show target view
-            const targetView = document.getElementById('view-' + viewId);
-            if(targetView) targetView.classList.remove('hidden-view');
-            
-            // Hide mobile nav drawer if open
-            const mobileNav = document.getElementById('mobile-nav');
-            mobileNav.classList.add('hidden');
+    <!-- "Pitch Me" Modal Container -->
+    <div id="pitch-modal" class="fixed inset-0 bg-charcoal-900/40 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 no-print">
+        <div class="bg-cream-50 border border-cream-300 max-w-lg w-full rounded-2xl p-6 md:p-8 space-y-6 shadow-2xl relative mx-4 transform translate-y-4 transition-transform duration-300" id="pitch-modal-card">
+            <button onclick="closePitchModal()" class="absolute top-4 right-4 text-charcoal-500 hover:text-charcoal-900 transition-colors p-1" aria-label="Close modal">
+                <i class="ph ph-x text-2xl"></i>
+            </button>
+            <div class="space-y-2">
+                <h3 class="font-serif text-2xl font-bold text-charcoal-900">Pitch AI Leadership Opportunity</h3>
+                <p class="text-xs text-charcoal-500 font-light leading-relaxed">
+                    Direct access channel for recruiters, technical leads, and founders seeking to secure Harish Damodaran for product execution.
+                </p>
+            </div>
+            <form onsubmit="handlePitchSubmit(event)" class="space-y-4 text-xs">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="font-semibold text-charcoal-800">Your Name</label>
+                        <input type="text" required placeholder="Alexander Vance" class="w-full p-3 rounded-lg border border-cream-300 bg-cream-100 text-charcoal-900">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="font-semibold text-charcoal-800">Your Email Address</label>
+                        <input type="email" required placeholder="vance@agency.ai" class="w-full p-3 rounded-lg border border-cream-300 bg-cream-100 text-charcoal-900">
+                    </div>
+                </div>
+                <div class="space-y-1">
+                    <label class="font-semibold text-charcoal-800">Company / Organization</label>
+                    <input type="text" required placeholder="AI Systems Group" class="w-full p-3 rounded-lg border border-cream-300 bg-cream-100 text-charcoal-900">
+                </div>
+                <div class="space-y-1">
+                    <label class="font-semibold text-charcoal-800">The Pitch / Proposal</label>
+                    <textarea rows="4" required placeholder="Describe your product architecture, timeline, and candidate requirements..." class="w-full p-3 rounded-lg border border-cream-300 bg-cream-100 text-charcoal-900"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 bg-terracotta-500 hover:bg-terracotta-600 text-cream-100 font-bold uppercase tracking-wider rounded-lg transition-all shadow-sm">
+                    Submit Proposal Securely
+                </button>
+            </form>
+        </div>
+    </div>
 
-            // Scroll to specific section or top
-            if (sectionId) {
-                setTimeout(() => {
-                    const section = document.getElementById(sectionId);
-                    if(section) section.scrollIntoView({ behavior: 'smooth' });
-                }, 50);
+    <!-- Active Toast feedback -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 ease-out pointer-events-none no-print">
+        <div class="bg-charcoal-900 text-cream-100 px-6 py-3.5 rounded-lg shadow-xl flex items-center gap-3 border border-cream-300/20 text-xs font-semibold">
+            <i class="ph ph-check-circle text-terracotta-400 text-lg"></i>
+            <span id="toast-message">Workflow execution completed successfully.</span>
+        </div>
+    </div>
+
+    <script>
+        // Inject current copyright year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Single Page Router Logic
+        function navigateTo(viewId) {
+            // Hide all views
+            document.querySelectorAll('.view-container').forEach(el => el.classList.add('hidden'));
+            
+            // Show requested view
+            document.getElementById(`view-${viewId}`).classList.remove('hidden');
+
+            // Reset navigation menu visual active styles
+            document.querySelectorAll('.nav-item').forEach(el => {
+                el.classList.remove('text-terracotta-500', 'font-bold');
+                el.classList.add('text-charcoal-500');
+            });
+
+            // Set visual indicator on active menu path
+            if (viewId === 'projects') {
+                const link = document.getElementById('nav-link-showcase');
+                if (link) link.classList.add('text-terracotta-500', 'font-bold');
+            } else if (viewId === 'publications') {
+                const link = document.getElementById('nav-link-articles');
+                if (link) link.classList.add('text-terracotta-500', 'font-bold');
+            }
+
+            // Instantly viewport reset to top of page
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+
+        // Smart dynamic navigator that accounts for scroll jumps on the home view
+        function handleNav(viewId, sectionId) {
+            // Close mobile menu immediately upon clicks
+            document.getElementById('mobile-nav').classList.add('hidden');
+
+            if (viewId === 'home') {
+                navigateTo('home');
+                if (sectionId) {
+                    setTimeout(() => {
+                        if (sectionId === 'top') {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            return;
+                        }
+                        const el = document.getElementById(sectionId);
+                        if (el) {
+                            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 80);
+                }
             } else {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                navigateTo(viewId);
             }
         }
 
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu-toggle').addEventListener('click', () => {
-            const nav = document.getElementById('mobile-nav');
-            nav.classList.toggle('hidden');
+        // Responsive mobile drawer toggle
+        const mobileToggleBtn = document.getElementById('mobile-menu-toggle');
+        const mobileNavBlock = document.getElementById('mobile-nav');
+        
+        mobileToggleBtn.addEventListener('click', () => {
+            mobileNavBlock.classList.toggle('hidden');
         });
 
-        // --- Accordion Logic ---
+        // Toggle collapsible timeline elements with zero overlapping or dynamic bounds issues
         function toggleAccordion(id) {
             const content = document.getElementById(id);
-            const icon = document.getElementById(id + '-icon');
+            const icon = document.getElementById(`${id}-icon`);
             
-            // Close other open accordions in the same section context if desired 
-            // (keeping it simple and allowing multiple opens here)
-
             if (content.classList.contains('expanded')) {
                 content.classList.remove('expanded');
-                // Handle different icon types (+ vs caret)
-                if (icon.classList.contains('ph-minus')) {
-                    icon.classList.remove('ph-minus');
-                    icon.classList.add('ph-plus');
-                } else if (icon.classList.contains('ph-caret-up')) {
-                    icon.classList.remove('ph-caret-up');
-                    icon.classList.add('ph-caret-down');
+                if (icon) {
+                    icon.className = icon.className.replace('ph-minus', 'ph-plus').replace('ph-caret-up', 'ph-caret-down');
                 }
             } else {
                 content.classList.add('expanded');
-                if (icon.classList.contains('ph-plus')) {
-                    icon.classList.remove('ph-plus');
-                    icon.classList.add('ph-minus');
-                } else if (icon.classList.contains('ph-caret-down')) {
-                    icon.classList.remove('ph-caret-down');
-                    icon.classList.add('ph-caret-up');
+                if (icon) {
+                    icon.className = icon.className.replace('ph-plus', 'ph-minus').replace('ph-caret-down', 'ph-caret-up');
                 }
             }
         }
 
-        // --- Print Resume Logic ---
+        // Graph interactive metric descriptions
+        const chartPhases = [
+            {
+                title: "Phase 1: Basic Operational Configuration",
+                desc: "Initial baseline setup. Identified standard database structures and structured user requirements blueprints to minimize workflow disruptions."
+            },
+            {
+                title: "Phase 2: Intent Training & Conversation Tuning",
+                desc: "Optimized NLP models on mock interaction datasets, reaching 75% accuracy and mapping the initial 5G network parameter responses."
+            },
+            {
+                title: "Phase 3: Multi-Source Omni-Channel Integration",
+                desc: "Merged the conversational workflows with backend transaction logs and APIs, driving over $1M+ in greenfield consumer transactions."
+            },
+            {
+                title: "Phase 4: Multi-Agent Automated Evaluations",
+                desc: "Constructed benchmarking harnesses to check reasoning loops, latency budgets, and intent paths prior to production deployments."
+            }
+        ];
+
+        function selectGraphNode(index) {
+            const explainerTitle = document.getElementById('explainer-title');
+            const explainerDesc = document.getElementById('explainer-desc');
+            const info = chartPhases[index];
+            
+            explainerTitle.textContent = info.title;
+            explainerDesc.textContent = info.desc;
+            
+            triggerToast(`Inspecting: ${info.title.split(":")[0]}`);
+        }
+
+        // Actions: Modal Open/Close Controls
+        function openPitchModal() {
+            const modal = document.getElementById('pitch-modal');
+            const card = document.getElementById('pitch-modal-card');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            card.classList.remove('translate-y-4');
+        }
+
+        function closePitchModal() {
+            const modal = document.getElementById('pitch-modal');
+            const card = document.getElementById('pitch-modal-card');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            card.classList.add('translate-y-4');
+        }
+
+        // Handle Pitch Submission
+        function handlePitchSubmit(event) {
+            event.preventDefault();
+            closePitchModal();
+            triggerToast("Proposal sent successfully! I will review the metrics and align shortly.");
+        }
+
+        // Action trigger: Simulated PDF resume print handler
         function triggerPrintResume() {
-            // Make sure we are on the home view before printing, as it contains chronology
-            handleNav('home', 'top');
+            triggerToast("Launching Print Setup... Choose 'Save to PDF' to download your resume.");
             setTimeout(() => {
                 window.print();
             }, 500);
         }
 
-        // --- Modal Logic ---
-        const pitchModal = document.getElementById('pitch-modal');
-        const pitchContent = document.getElementById('pitch-modal-content');
+        // Substack Mock Subscription
+        function handleSubstackSubscribe(event) {
+            event.preventDefault();
+            const emailValue = document.getElementById('sub-email').value;
+            triggerToast(`Success! ${emailValue} subscribed for upcoming technical articles.`);
+            document.getElementById('sub-email').value = '';
+        }
 
-        function openPitchModal() {
-            pitchModal.classList.remove('hidden');
-            // Small delay to allow display:block to apply before animating opacity
+        // Micro-interaction Feedback Toast
+        function triggerToast(msg) {
+            const toastEl = document.getElementById('toast');
+            const toastMsgEl = document.getElementById('toast-message');
+            
+            toastMsgEl.textContent = msg;
+            toastEl.classList.remove('translate-y-20', 'opacity-0');
+            toastEl.classList.add('translate-y-0', 'opacity-100');
+            
             setTimeout(() => {
-                pitchModal.classList.remove('opacity-0');
-                pitchContent.classList.remove('scale-95');
-            }, 10);
+                toastEl.classList.remove('translate-y-0', 'opacity-100');
+                toastEl.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
         }
-
-        function closePitchModal() {
-            pitchModal.classList.add('opacity-0');
-            pitchContent.classList.add('scale-95');
-            setTimeout(() => {
-                pitchModal.classList.add('hidden');
-            }, 300); // Wait for transition
-        }
-        
-        // Close modal when clicking outside
-        pitchModal.addEventListener('click', (e) => {
-            if (e.target === pitchModal) closePitchModal();
-        });
-
-        // --- Interactive DotGrid Canvas Background ---
-        const canvas = document.getElementById('splash-canvas');
-        const ctx = canvas.getContext('2d');
-
-        let dots = [];
-        const dotSize = 2;
-        const spacing = 40;
-        // Mouse coordinates tracked globally on the window to bypass pointer-events: none on canvas
-        const mouse = { x: -1000, y: -1000, radius: 150 };
-
-        function initCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            dots = [];
-            
-            // Create the grid of dots
-            for (let x = 0; x < canvas.width; x += spacing) {
-                for (let y = 0; y < canvas.height; y += spacing) {
-                    dots.push({ x, y, baseX: x, baseY: y });
-                }
-            }
-        }
-
-        // Track mouse globally across the document
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        });
-
-        // Animate the dots reacting to the cursor
-        function animateCanvas() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            dots.forEach(dot => {
-                const dx = mouse.x - dot.x;
-                const dy = mouse.y - dot.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-
-                // Push dots away if within mouse radius
-                if (dist < mouse.radius) {
-                    const angle = Math.atan2(dy, dx);
-                    const force = (mouse.radius - dist) / mouse.radius;
-                    // Multiply force for stronger push
-                    dot.x -= Math.cos(angle) * force * 10;
-                    dot.y -= Math.sin(angle) * force * 10;
-                } else {
-                    // Slowly return to base position with easing
-                    dot.x += (dot.baseX - dot.x) * 0.1;
-                    dot.y += (dot.baseY - dot.y) * 0.1;
-                }
-
-                ctx.beginPath();
-                ctx.arc(dot.x, dot.y, dotSize, 0, Math.PI * 2);
-              // ctx.fillStyle = '#f7edec'; 
-              ctx.fillStyle =  '#f2e1df';
-                //ctx.fillStyle = '#C2593F'; // Rust-500 matching the brand theme
-                ctx.fill();
-            });
-            
-            requestAnimationFrame(animateCanvas);
-        }
-
-        window.addEventListener('resize', initCanvas);
-        
-        // Start the background animation
-        initCanvas();
-        animateCanvas();
-
     </script>
 </body>
 </html>
